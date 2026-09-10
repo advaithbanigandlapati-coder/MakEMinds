@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#050609; scrollbar-width:none; -ms-overflow-style:none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { width:0; height:0; }
+  body { -webkit-font-smoothing:antialiased; }
+  a { color:#9cc8e8; text-decoration:none; transition:color 240ms ease; }
+  a:hover { color:#ffffff; }
+  ::selection { background:rgba(125,178,221,0.35); }
+</style>
+</helmet>
+<div style="position:relative;min-height:100vh;background:#050609;color:#ffffff;font-family:'Roboto',system-ui,sans-serif;overflow-x:clip">
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:0;background:radial-gradient(120% 80% at 15% -10%, rgba(125,178,221,0.16) 0%, rgba(5,6,9,0) 58%)"></div>
+
+  <dc-import name="SiteChrome" active="programs" hint-size="100%,64px"></dc-import>
+
+  <main style="position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:118px 22px 60px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:34px;align-items:end;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,0.14)">
+      <div style="min-width:0">
+        <h1 style="margin:20px 0 0;font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line-height:0.95;letter-spacing:-0.03em">Robotics is a<br>means, not the end.</h1>
+        <p style="margin:22px 0 0;max-width:52ch;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.75)">One competition team, two mentored FLL teams, a virtual hackathon, and a summer camp. Everything we learn gets handed down.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:20px;min-width:0">
+        <div><p style="margin:0;font-size:clamp(2rem,4.5vw,3rem);font-weight:700;line-height:0.9">300+</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Students reached / yr</p></div>
+        <div><p style="margin:0;font-size:clamp(2rem,4.5vw,3rem);font-weight:700;line-height:0.9">04</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Programs</p></div>
+        <div><p style="margin:0;font-size:clamp(2rem,4.5vw,3rem);font-weight:700;line-height:0.9;color:#7db2dd">02</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">FLL teams mentored</p></div>
+      </div>
+    </div>
+
+    <section style="margin-top:44px;display:flex;flex-direction:column;gap:16px">
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;padding:30px 26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05)">
+        <div style="min-width:0">
+          <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">Ages 12–18</p>
+          <h2 style="margin:16px 0 0;font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:700;line-height:1.05;letter-spacing:-0.02em">FIRST Tech Challenge</h2>
+          <div style="display:flex;gap:22px;margin-top:22px">
+            <div><p style="margin:0;font-size:26px;font-weight:700;line-height:1">03</p><p style="margin:6px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">Seasons</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:700;line-height:1">27</p><p style="margin:6px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">Events</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:700;line-height:1;color:#7db2dd">08</p><p style="margin:6px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">Awards</p></div>
+          </div>
+        </div>
+        <div style="grid-column:span 2;min-width:0">
+          <p style="margin:0;font-size:clamp(1.05rem,2.2vw,1.35rem);font-weight:500;line-height:1.35">Our flagship competition. Design, build, code a robot. Compete from regionals to worlds.</p>
+          <p style="margin:16px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72)">Team 23786 has competed in FTC since 2023 — three full seasons across CENTERSTAGE, INTO THE DEEP, and DECODE. We design with CAD, fabricate with hand tools and 3D printers, and code our control systems in OnBot Java and Android Studio.</p>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;padding:30px 26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05)">
+        <div style="min-width:0">
+          <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">Ages 9–14</p>
+          <h2 style="margin:16px 0 0;font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:700;line-height:1.05;letter-spacing:-0.02em">FIRST LEGO League</h2>
+          <div style="display:flex;gap:22px;margin-top:22px">
+            <div><p style="margin:0;font-size:26px;font-weight:700;line-height:1">02</p><p style="margin:6px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">Teams mentored</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:700;line-height:1">12</p><p style="margin:6px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">Workshops / year</p></div>
+          </div>
+        </div>
+        <div style="grid-column:span 2;min-width:0">
+          <p style="margin:0;font-size:clamp(1.05rem,2.2vw,1.35rem);font-weight:500;line-height:1.35">Mentoring younger teams. Mission planning. LEGO SPIKE Prime. Annual challenge themes.</p>
+          <p style="margin:16px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72)">We mentor two FLL teams of younger Edison students. Beyond robot building, FLL emphasizes a research project tied to the season's real-world theme — and our high-schoolers run the design-thinking workshops.</p>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;padding:30px 26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05)">
+        <div style="min-width:0">
+          <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">Ages 13–18</p>
+          <h2 style="margin:16px 0 0;font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:700;line-height:1.05;letter-spacing:-0.02em">HackEMinds</h2>
+          <div style="display:flex;gap:22px;margin-top:22px">
+            <div><p style="margin:0;font-size:26px;font-weight:700;line-height:1">02</p><p style="margin:6px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">Editions run</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:700;line-height:1">100%</p><p style="margin:6px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">Virtual</p></div>
+          </div>
+        </div>
+        <div style="grid-column:span 2;min-width:0">
+          <p style="margin:0;font-size:clamp(1.05rem,2.2vw,1.35rem);font-weight:500;line-height:1.35">Our own beginner-friendly hackathon for middle and high school students.</p>
+          <p style="margin:16px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72)">Fully virtual, free to enter, and built for first-timers: workshop tracks on the Saturday, judging on the Sunday, and mentors from the team on call the whole weekend. Two editions run so far, in 2024 and 2025.</p>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;padding:30px 26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05)">
+        <div style="min-width:0">
+          <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">All ages</p>
+          <h2 style="margin:16px 0 0;font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:700;line-height:1.05;letter-spacing:-0.02em">Community + outreach</h2>
+          <div style="display:flex;gap:22px;margin-top:22px">
+            <div><p style="margin:0;font-size:26px;font-weight:700;line-height:1">300+</p><p style="margin:6px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">Students / yr</p></div>
+            <div><p style="margin:0;font-size:26px;font-weight:700;line-height:1">06</p><p style="margin:6px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">Library demos</p></div>
+          </div>
+        </div>
+        <div style="grid-column:span 2;min-width:0">
+          <p style="margin:0;font-size:clamp(1.05rem,2.2vw,1.35rem);font-weight:500;line-height:1.35">STEM demos, school visits, library workshops, and a summer build camp.</p>
+          <p style="margin:16px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72)">Robotics is a means, not the end. We run free demos at Edison Public Library, partner with local elementary schools on STEM days, and host an eight-week summer camp where middle-schoolers learn CAD and Java from our team members.</p>
+        </div>
+      </article>
+    </section>
+
+    <section style="margin-top:56px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px">
+        <div style="border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.04);padding:24px 22px"><p style="margin:0;font-family:'Montserrat',sans-serif;font-size:13px;color:#7db2dd">September</p><p style="margin:12px 0 0;font-size:17px;font-weight:600">Kickoff + strategy</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.65)">Game reveal, manual read, scoring analysis.</p></div>
+        <div style="border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.04);padding:24px 22px"><p style="margin:0;font-family:'Montserrat',sans-serif;font-size:13px;color:#7db2dd">October – December</p><p style="margin:12px 0 0;font-size:17px;font-weight:600">Build + league meets</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.65)">Prototype, iterate, and compete every few weeks.</p></div>
+        <div style="border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.04);padding:24px 22px"><p style="margin:0;font-family:'Montserrat',sans-serif;font-size:13px;color:#7db2dd">January – February</p><p style="margin:12px 0 0;font-size:17px;font-weight:600">Tournament + states</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.65)">Conference tournament, then the NJ Championship.</p></div>
+        <div style="border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.04);padding:24px 22px"><p style="margin:0;font-family:'Montserrat',sans-serif;font-size:13px;color:#7db2dd">March – August</p><p style="margin:12px 0 0;font-size:17px;font-weight:600">Off-season + outreach</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.65)">Camp, HackEMinds, FLL mentoring, testbeds.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="position:relative;z-index:10;padding:0 22px 40px">
+    <div style="display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding-top:26px;border-top:1px solid rgba(255,255,255,0.14)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="assets/makeminds-mark.png" alt="" style="width:30px;height:30px;object-fit:contain;display:block">
+        <div>
+          <p style="margin:0;font-size:15px;font-weight:600">MakEMinds Robotics</p>
+          <p style="margin:5px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">FTC 23786 · Edison, NJ · © 2026</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;font-family:'Montserrat',sans-serif;font-size:14px">
+        <a href="mailto:info@makemindsrobotics.org">info@makemindsrobotics.org</a>
+        <a href="https://ftc-events.firstinspires.org/team/23786" target="_blank" rel="noopener noreferrer">ftc-events</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

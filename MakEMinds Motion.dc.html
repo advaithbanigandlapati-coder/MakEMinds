@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#050609; scrollbar-width:none; -ms-overflow-style:none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { width:0; height:0; }
+  body { -webkit-font-smoothing:antialiased; }
+  a { color:#9cc8e8; text-decoration:none; transition:color 240ms ease; }
+  a:hover { color:#ffffff; }
+  ::selection { background:rgba(125,178,221,0.35); }
+  @keyframes mm-live { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.25; transform:scale(0.7); } }
+</style>
+</helmet>
+<div style="position:relative;background:#050609;color:#ffffff;font-family:'Roboto',system-ui,sans-serif;overflow-x:clip">
+
+  <div id="stage" aria-hidden="true" style="position:fixed;inset:0;z-index:0;overflow:hidden;background:#050609">
+    <video id="film" muted="muted" playsinline="playsinline" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1200ms ease-out;will-change:transform">
+      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260613_180732_a54afbf6-b30d-470e-861f-669871f09f67.mp4" type="video/mp4">
+    </video>
+    <div id="scrim" style="position:absolute;inset:0;background:#050609;opacity:0.28"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(130% 90% at 50% 0%, rgba(5,6,9,0) 30%, rgba(5,6,9,0.85) 100%)"></div>
+  </div>
+
+  <dc-import name="SiteChrome" active="home" hint-size="100%,64px"></dc-import>
+
+  <section id="film-top" data-screen-label="Hero" style="position:relative;height:230vh">
+    <div style="position:sticky;top:0;height:100vh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-end;gap:26px;padding:88px 22px 30px">
+      <div id="hero-type" style="min-height:0;will-change:transform,opacity">
+        <h1 style="margin:0;font-size:min(clamp(2.6rem,13.5vw,12rem),18vh);font-weight:700;line-height:0.86;letter-spacing:-0.035em;text-shadow:0 10px 60px rgba(0,0,0,0.6)">
+          <span style="display:block;overflow:hidden"><span data-rise="0" style="display: inline-block; transform: translateY(110%); font-family: 'Roboto',sans-serif">MAKEMINDS</span></span>
+          <span style="display:block;overflow:hidden"><span data-rise="90" style="display: inline-block; transform: translateY(110%); color: #7db2dd; font-family: 'Roboto',sans-serif">23786</span></span>
+        </h1>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px">
+        <p data-fade="240" style="margin: 0; max-width: 430px; font-size: clamp(13px,1.6vh,17px); line-height: 1.5; color: rgba(255,255,255,0.9); text-shadow: 0 2px 16px rgba(0,0,0,0.85); font-family: 'Montserrat',sans-serif">Twenty-seven events. Eight awards. One trip to the FIRST Championship. Built by students, in a basement, in three years.</p>
+        
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Statement" style="position:relative;height:300vh">
+    <div style="position:sticky;top:0;height:100vh;box-sizing:border-box;display:flex;align-items:center;padding:0 22px">
+      <div style="position:relative;width:100%;max-width:1100px;margin:0 auto">
+        
+        <div style="position:relative;min-height:34vh">
+          <p data-line="0" style="margin:0;position:absolute;inset-inline:0;top:0;font-size:clamp(1.7rem,4.6vw,3.6rem);font-weight:500;line-height:1.14;letter-spacing:-0.02em;text-shadow:0 6px 40px rgba(0,0,0,0.7)">A student-led FTC team out of Edison, New Jersey.</p>
+          <p data-line="1" style="margin:0;position:absolute;inset-inline:0;top:0;font-size:clamp(1.7rem,4.6vw,3.6rem);font-weight:500;line-height:1.14;letter-spacing:-0.02em;text-shadow:0 6px 40px rgba(0,0,0,0.7);opacity:0">We design, build, code, and drive our own competition robots.</p>
+          <p data-line="2" style="margin:0;position:absolute;inset-inline:0;top:0;font-size:clamp(1.7rem,4.6vw,3.6rem);font-weight:500;line-height:1.14;letter-spacing:-0.02em;text-shadow:0 6px 40px rgba(0,0,0,0.7);opacity:0">We mentor FLL teams, run library STEM days, and host HackEMinds.</p>
+          <p data-line="3" style="margin:0;position:absolute;inset-inline:0;top:0;font-size:clamp(1.7rem,4.6vw,3.6rem);font-weight:500;line-height:1.14;letter-spacing:-0.02em;text-shadow:0 6px 40px rgba(0,0,0,0.7);opacity:0">Engineering rigor, community first. <span style="color:#7db2dd">We win when our chapter wins.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="record" data-screen-label="Counters" style="position:relative;padding:12vh 22px 6vh">
+    <div style="max-width:1200px;margin:0 auto;border-radius:20px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.07);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:34px 26px">
+      
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:28px">
+        <div><p data-count="3" style="margin:0;font-size:clamp(2.8rem,7vw,4.6rem);font-weight:700;line-height:0.9;letter-spacing:-0.03em">03</p><p style="margin:10px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.6)">Seasons played</p></div>
+        <div><p data-count="27" style="margin:0;font-size:clamp(2.8rem,7vw,4.6rem);font-weight:700;line-height:0.9;letter-spacing:-0.03em">27</p><p style="margin:10px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.6)">Official events</p></div>
+        <div><p data-count="8" style="margin:0;font-size:clamp(2.8rem,7vw,4.6rem);font-weight:700;line-height:0.9;letter-spacing:-0.03em;color:#7db2dd">08</p><p style="margin:10px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.6)">Awards won</p></div>
+        <div><p data-count="1" style="margin:0;font-size:clamp(2.8rem,7vw,4.6rem);font-weight:700;line-height:0.9;letter-spacing:-0.03em">01</p><p style="margin:10px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.6)">World championship</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="seasons" data-screen-label="Seasons" style="position:relative;padding:6vh 22px 14vh">
+    <div style="max-width:1200px;margin:0 auto">
+      
+
+      <article data-drift="0.06" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:26px;padding:34px 0;border-top:1px solid rgba(255,255,255,0.16)">
+        <div style="min-width:0">
+          <div style="display:inline-flex;align-items:center;justify-content:center;width:150px;height:92px;margin-bottom:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.92);padding:10px;box-sizing:border-box"><img src="assets/season-decode.png" alt="DECODE presented by RTX" style="display:block;max-width:100%;max-height:100%;object-fit:contain"></div>
+          <p style="margin:0;font-size:clamp(2.4rem,6vw,4rem);font-weight:700;line-height:0.9;letter-spacing:-0.03em;color:#7db2dd">2025</p>
+          <p style="margin:12px 0 0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">DECODE · 10 events</p>
+        </div>
+        <div style="grid-column:span 2;min-width:0">
+          <p style="margin:0;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:500;line-height:1.3">Inspire Award 2nd Place · Parkway Division Winning Alliance Captain · State Finalist Alliance Captain</p>
+          <p style="margin:14px 0 0;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72)">Captained the winning alliance in the Parkway Division at the New Jersey Championship, took the state finals, and closed the season at the FIRST Championship in the Ross Division.</p>
+        </div>
+      </article>
+
+      <article data-drift="0.04" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:26px;padding:34px 0;border-top:1px solid rgba(255,255,255,0.16)">
+        <div style="min-width:0">
+          <div style="display:inline-flex;align-items:center;justify-content:center;width:150px;height:92px;margin-bottom:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.92);padding:10px;box-sizing:border-box"><img src="assets/season-into-the-deep.png" alt="INTO THE DEEP presented by RTX" style="display:block;max-width:100%;max-height:100%;object-fit:contain"></div>
+          <p style="margin:0;font-size:clamp(2.4rem,6vw,4rem);font-weight:700;line-height:0.9;letter-spacing:-0.03em">2024</p>
+          <p style="margin:12px 0 0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">INTO THE DEEP · 9 events</p>
+        </div>
+        <div style="grid-column:span 2;min-width:0">
+          <p style="margin:0;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:500;line-height:1.3">Control Award · Think Award · Inspire Award 3rd Place · Turnpike Division Finalist Alliance Captain</p>
+          <p style="margin:14px 0 0;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72)">Four awards across the conference tournament and the state championship, plus an off-season run at the Michiana Premier Event.</p>
+        </div>
+      </article>
+
+      <article data-drift="0.02" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:26px;padding:34px 0;border-block:1px solid rgba(255,255,255,0.16)">
+        <div style="min-width:0">
+          <div style="display:inline-flex;align-items:center;justify-content:center;width:150px;height:92px;margin-bottom:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.92);padding:10px;box-sizing:border-box"><img src="assets/season-centerstage.png" alt="CENTERSTAGE presented by Raytheon Technologies" style="display:block;max-width:100%;max-height:100%;object-fit:contain"></div>
+          <p style="margin:0;font-size:clamp(2.4rem,6vw,4rem);font-weight:700;line-height:0.9;letter-spacing:-0.03em">2023</p>
+          <p style="margin:12px 0 0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">CENTERSTAGE · rookie year</p>
+        </div>
+        <div style="grid-column:span 2;min-width:0">
+          <p style="margin:0;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:500;line-height:1.3">Finalist Alliance, first team selected — Central Conference Tournament</p>
+          <p style="margin:14px 0 0;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72)">Five league meets, a conference finals run as the first pick, and a first trip to the New Jersey State Championship.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="season" data-screen-label="BIOBUZZ" style="position:relative;height:200vh">
+    <div style="position:sticky;top:0;height:100vh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:24px;padding:84px 22px 30px;overflow:hidden">
+      <div style="max-width:1200px;margin:0 auto;width:100%">
+        
+        <div id="biobuzz-type" style="margin-top:20px;will-change:transform">
+          <div style="display:inline-flex;align-items:center;justify-content:center;width:min(420px,56vw);max-height:32vh;border-radius:20px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.94);padding:20px 24px;box-sizing:border-box;box-shadow:0 18px 50px rgba(0,0,0,0.55)"><img src="assets/biobuzz-lockup.png" alt="BIOBUZZ presented by RTX — FIRST Tech Challenge, FIRST CANOPY" style="display:block;max-width:100%;max-height:26vh;object-fit:contain"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:22px;margin-top:28px;align-items:end">
+          <p style="margin:0;max-width:46ch;font-size:clamp(14px,1.6vh,16px);line-height:1.6;color:rgba(255,255,255,0.85);text-shadow:0 2px 16px rgba(0,0,0,0.8)">The 2026–27 FIRST Tech Challenge game, presented by RTX, inside the biodiversity-themed FIRST CANOPY season. Scoring runs on Pollen — three-inch balls that reward fast, repeatable intake and a clean autonomous.</p>
+          <div style="display:flex;align-items:center;gap:18px;padding:18px 22px;border-radius:16px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)">
+            <div>
+              <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.7)">Kickoff</p>
+              <p id="clock" style="margin:8px 0 0;font-size:34px;font-weight:700;line-height:1">—</p>
+            </div>
+            <div style="width:1px;align-self:stretch;background:rgba(255,255,255,0.2)"></div>
+            <div>
+              <p style="margin:0;font-size:15px;font-weight:600">12 September 2026</p>
+              <p style="margin:7px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.7)">Reveal · strategy · build</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs" data-screen-label="Programs" style="position:relative;height:400vh">
+    <div style="position:sticky;top:0;height:100vh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;overflow:hidden">
+      
+      <div id="track" style="display:flex;gap:18px;padding:0 22px;width:max-content;will-change:transform">
+        <div style="width:min(78vw,420px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;height:52vh;border-radius:20px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:28px">
+          
+          <div>
+            
+            
+          </div>
+          <p style="margin:0;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:600;line-height:1.05">FIRST Tech Challenge</p><p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.75)">The flagship. Design, build, and code a competition robot, then run it from league meets to Worlds.</p><p style="margin:0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Ages 12–18</p>
+        </div>
+        <div style="width:min(78vw,420px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;height:52vh;border-radius:20px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:28px">
+          
+          <div>
+            
+            
+          </div>
+          <p style="margin:0;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:600;line-height:1.05">FIRST LEGO League</p><p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.75)">Mentoring younger teams through mission planning and SPIKE Prime builds — the pipeline most of us came up through.</p><p style="margin:0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Ages 9–14</p>
+        </div>
+        <div style="width:min(78vw,420px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;height:52vh;border-radius:20px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:28px">
+          
+          <div>
+            
+            
+          </div>
+          <p style="margin:0;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:600;line-height:1.05">HackEMinds</p><p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.75)">Our fully virtual, beginner-friendly hackathon for middle and high schoolers. Two editions run, 2024 and 2025.</p><p style="margin:0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Ages 13–18</p>
+        </div>
+        <div style="width:min(78vw,420px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;height:52vh;border-radius:20px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:28px">
+          
+          <div>
+            
+            
+          </div>
+          <p style="margin:0;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:600;line-height:1.05">Community + outreach</p><p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.75)">STEM demos, school visits, and library workshops across Edison and Middlesex County.</p><p style="margin:0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">All ages</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="position:relative;padding:14vh 22px 8vh">
+    <div style="max-width:1200px;margin:0 auto">
+      
+      <h2 data-fade="0" style="margin:22px 0 0;font-size:clamp(2.2rem,7vw,5rem);font-weight:700;line-height:0.95;letter-spacing:-0.03em;text-shadow:0 8px 40px rgba(0,0,0,0.6)">Three ways in.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;margin-top:40px">
+        <a href="mailto:info@makemindsrobotics.org?subject=Sponsorship" data-fade="80" style="display:flex;flex-direction:column;gap:14px;padding:26px;border-radius:18px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#fff;transition:background 320ms ease,border-color 320ms ease,transform 320ms cubic-bezier(0.19,1,0.22,1)" style-hover="background:rgba(255,255,255,0.14);border-color:rgba(125,178,221,0.6);transform:translateY(-4px)">
+          
+          <span style="font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:600;line-height:1.05">Fund the build</span>
+          <span style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.75)">Registration, parts, and travel for the BIOBUZZ season.</span>
+          <span style="margin-top:auto;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.6)">Email us →</span>
+        </a>
+        <a href="mailto:info@makemindsrobotics.org?subject=Mentoring" data-fade="160" style="display:flex;flex-direction:column;gap:14px;padding:26px;border-radius:18px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#fff;transition:background 320ms ease,border-color 320ms ease,transform 320ms cubic-bezier(0.19,1,0.22,1)" style-hover="background:rgba(255,255,255,0.14);border-color:rgba(125,178,221,0.6);transform:translateY(-4px)">
+          
+          <span style="font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:600;line-height:1.05">Give us hours</span>
+          <span style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.75)">Engineers, machinists, and software folks, in person or remote.</span>
+          <span style="margin-top:auto;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.6)">Email us →</span>
+        </a>
+        <a href="mailto:info@makemindsrobotics.org?subject=Joining" data-fade="240" style="display:flex;flex-direction:column;gap:14px;padding:26px;border-radius:18px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#fff;transition:background 320ms ease,border-color 320ms ease,transform 320ms cubic-bezier(0.19,1,0.22,1)" style-hover="background:rgba(255,255,255,0.14);border-color:rgba(125,178,221,0.6);transform:translateY(-4px)">
+          
+          <span style="font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:600;line-height:1.05">Try out</span>
+          <span style="font-size:15px;line-height:1.6;color:rgba(255,255,255,0.75)">Edison-area student? Tryouts open before each season.</span>
+          <span style="margin-top:auto;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.6)">Email us →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="position:relative;padding:0 22px 40px">
+    <div style="display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding-top:26px;border-top:1px solid rgba(255,255,255,0.14)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="assets/makeminds-mark.png" alt="" style="width:30px;height:30px;object-fit:contain;display:block">
+        <div>
+          <p style="margin:0;font-size:15px;font-weight:600">MakEMinds Robotics</p>
+          <p style="margin:5px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">FTC 23786 · Edison, NJ · © 2026</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;font-family:'Montserrat',sans-serif;font-size:14px">
+        <a href="mailto:info@makemindsrobotics.org">info@makemindsrobotics.org</a>
+        <a href="https://www.makemindsrobotics.org" target="_blank" rel="noopener noreferrer">makemindsrobotics.org</a>
+        <a href="https://ftc-events.firstinspires.org/team/23786" target="_blank" rel="noopener noreferrer">ftc-events</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:800},&quot;filmScrub&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;reveals&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+const clamp01 = v => (v < 0 ? 0 : v > 1 ? 1 : v);
+
+class Component extends DCLogic {
+  componentDidMount() {
+    this.smooth = 0;
+    this.target = 0;
+    this.filmReady = false;
+    this.last = performance.now();
+    this.collect();
+    this.bind();
+    this._raf = requestAnimationFrame(t => this.tick(t));
+    this._wake = () => { this.last = performance.now(); this.collect(); this.revealInView(); };
+    document.addEventListener('visibilitychange', this._wake);
+    window.addEventListener('focus', this._wake);
+  }
+
+  componentDidUpdate() { this.collect(); }
+
+  // Direct edits swap DOM nodes out, so nothing is cached across frames
+  // without being re-collected when a cached node goes stale.
+  collect() {
+    const d = document;
+    this.film = d.getElementById('film');
+    this.scrim = d.getElementById('scrim');
+    this.heroType = d.getElementById('hero-type');
+    this.heroSection = d.getElementById('film-top');
+    this.bigWord = d.getElementById('biobuzz-type');
+    this.track = d.getElementById('track');
+    this.trackSection = this.track && this.track.closest('section');
+    this.lines = Array.from(d.querySelectorAll('[data-line]'));
+    this.lineWrap = this.lines[0] && this.lines[0].closest('section');
+    this.drifts = Array.from(d.querySelectorAll('[data-drift]'));
+    this.counters = Array.from(d.querySelectorAll('[data-count]'));
+    this.fades = Array.from(d.querySelectorAll('[data-fade]'));
+
+    const clock = d.getElementById('clock');
+    if (clock && clock.textContent === '\u2014') {
+      const days = Math.ceil((new Date('2026-09-12T09:00:00-04:00') - Date.now()) / 86400000);
+      clock.textContent = days > 0 ? 'T\u2013' + String(days).padStart(2, '0') : 'LIVE';
+    }
+
+    // Reveals must never depend on a frame callback: rAF is paused while the
+    // document is hidden, and a latched element would stay hidden for good.
+    Array.from(d.querySelectorAll('[data-rise]')).forEach(el => {
+      if (el.dataset.risen) return;
+      el.style.transition = 'transform 950ms cubic-bezier(0.19,1,0.22,1) ' + el.dataset.rise + 'ms';
+      void el.offsetHeight;
+      el.style.transform = 'translateY(0)';
+      el.dataset.risen = '1';
+    });
+
+    this.fades.forEach(el => {
+      if (el.dataset.faded) return;
+      el.dataset.faded = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 800ms ease-out ' + el.dataset.fade + 'ms, transform 800ms cubic-bezier(0.19,1,0.22,1) ' + el.dataset.fade + 'ms';
+    });
+    this.revealInView();
+  }
+
+  revealInView() {
+    if (!this.fades) return;
+    this.fades.forEach(el => {
+      if (el.style.opacity === '1') return;
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.95) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      }
+    });
+  }
+
+  bind() {
+    this._read = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      this.target = max > 0 ? clamp01(window.scrollY / max) : 0;
+      this.revealInView();
+    };
+    this._read();
+    window.addEventListener('scroll', this._read, { passive: true });
+    window.addEventListener('resize', this._read);
+  }
+
+  // Progress reads the eased scroll position, so pinned sections inherit the
+  // same glide as the film instead of tracking the wheel frame by frame.
+  prog(sec) {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const top = sec.offsetTop - this.smooth * max;
+    const span = sec.offsetHeight - window.innerHeight;
+    return clamp01(-top / (span > 0 ? span : 1));
+  }
+
+  tick(now) {
+    const t = now || performance.now();
+    const dt = Math.min(64, t - this.last);
+    this.last = t;
+    if (this.film && !this.film.isConnected) this.collect();
+
+    this.smooth += (this.target - this.smooth) * (1 - Math.pow(0.014, dt / 1000));
+    const s = this.smooth;
+
+    if (this.film) {
+      if (!this.filmReady && this.film.readyState >= 2) {
+        this.filmReady = true;
+        this.film.style.opacity = '1';
+      }
+      if (this.filmReady && this.film.duration) {
+        const want = s * (this.film.duration - 0.05);
+        if (Math.abs(this.film.currentTime - want) > 0.03) { try { this.film.currentTime = want; } catch (e) {} }
+      }
+      this.film.style.transform = 'scale(' + (1.06 + s * 0.08).toFixed(3) + ')';
+    }
+    if (this.scrim) this.scrim.style.opacity = (0.26 + s * 0.42).toFixed(3);
+
+    if (this.heroSection && this.heroType) {
+      const p = this.prog(this.heroSection);
+      const e = p * p * (3 - 2 * p);
+      this.heroType.style.transform = 'translate3d(0,' + (-e * 110).toFixed(1) + 'px,0) scale(' + (1 - e * 0.14).toFixed(3) + ')';
+      this.heroType.style.opacity = (1 - clamp01(p * 1.25)).toFixed(3);
+      this.heroType.style.filter = e > 0.002 ? 'blur(' + (e * 6).toFixed(2) + 'px)' : 'none';
+    }
+
+    if (this.lineWrap && this.lines.length) {
+      const p = this.prog(this.lineWrap) * this.lines.length;
+      this.lines.forEach((el, i) => {
+        const d = p - i;
+        const o = Math.min(clamp01((d + 0.3) / 0.3), clamp01((1 - d) / 0.3));
+        el.style.opacity = o.toFixed(3);
+        el.style.transform = 'translate3d(0,' + ((1 - o) * 30).toFixed(1) + 'px,0)';
+        el.style.filter = o > 0.99 ? 'none' : 'blur(' + ((1 - o) * 5).toFixed(2) + 'px)';
+      });
+    }
+
+    if (this.trackSection && this.track) {
+      // Track finishes at 72% of the pin, leaving a dwell so the last card is
+      // readable before the section releases.
+      const p = clamp01(this.prog(this.trackSection) / 0.72);
+      const e = p * p * (3 - 2 * p);
+      const dist = Math.max(0, this.track.scrollWidth - window.innerWidth + 44);
+      this.track.style.transform = 'translate3d(' + (-e * dist).toFixed(1) + 'px,0,0)';
+      Array.from(this.track.children).forEach(card => {
+        const r = card.getBoundingClientRect();
+        const off = Math.abs(r.left + r.width / 2 - window.innerWidth / 2) / window.innerWidth;
+        card.style.opacity = (1 - Math.min(0.5, off * 0.85)).toFixed(3);
+        card.style.transform = 'scale(' + (1 - Math.min(0.06, off * 0.09)).toFixed(3) + ')';
+      });
+    }
+
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const easedY = s * maxScroll;
+    this.drifts.forEach(el => {
+      let top = el.offsetTop, p = el.offsetParent;
+      while (p) { top += p.offsetTop; p = p.offsetParent; }
+      const c = (top - easedY + el.offsetHeight / 2 - window.innerHeight / 2) / window.innerHeight;
+      el.style.transform = 'translate3d(0,' + (c * Number(el.dataset.drift) * -100).toFixed(1) + 'px,0)';
+    });
+
+    this.revealInView();
+
+    this.counters.forEach(el => {
+      if (el.dataset.ran) return;
+      if (el.getBoundingClientRect().top > window.innerHeight * 0.92) return;
+      el.dataset.ran = '1';
+      const to = Number(el.dataset.count);
+      const start = performance.now();
+      const step = n => {
+        const k = clamp01((n - start) / 900);
+        el.textContent = String(Math.round(to * (1 - Math.pow(1 - k, 3)))).padStart(2, '0');
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+
+    this._raf = requestAnimationFrame(t2 => this.tick(t2));
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    if (this._wake) {
+      document.removeEventListener('visibilitychange', this._wake);
+      window.removeEventListener('focus', this._wake);
+    }
+    window.removeEventListener('scroll', this._read);
+    window.removeEventListener('resize', this._read);
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

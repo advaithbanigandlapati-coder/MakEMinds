@@ -1,0 +1,40 @@
+{
+  "_source": "Tiers + names are placeholders pending confirmation from team. Replace before launch.",
+  "__placeholder": true,
+  "tiers": [
+    {
+      "id": "title",
+      "label": "Title Sponsor",
+      "blurb": "Powers the entire season — robot, travel, registration.",
+      "sponsors": [
+        { "name": "Edison Robotics Foundation", "url": null, "__placeholder": true }
+      ]
+    },
+    {
+      "id": "gold",
+      "label": "Gold",
+      "blurb": "Funds major build expenses: CAD seats, drivetrains, off-season testbeds.",
+      "sponsors": [
+        { "name": "REV Robotics", "url": "https://www.revrobotics.com", "__placeholder": true },
+        { "name": "goBILDA", "url": "https://www.gobilda.com", "__placeholder": true }
+      ]
+    },
+    {
+      "id": "silver",
+      "label": "Silver",
+      "blurb": "Underwrites event travel, jerseys, food.",
+      "sponsors": [
+        { "name": "Local Family A", "url": null, "__placeholder": true },
+        { "name": "Local Family B", "url": null, "__placeholder": true }
+      ]
+    },
+    {
+      "id": "friends",
+      "label": "Friends",
+      "blurb": "Every $25 helps. Workshop snacks, library outreach swag, FLL kits.",
+      "sponsors": [
+        { "name": "Edison PTA", "url": null, "__placeholder": true }
+      ]
+    }
+  ]
+}

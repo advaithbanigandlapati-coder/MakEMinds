@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#050609; scrollbar-width:none; -ms-overflow-style:none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { width:0; height:0; }
+  body { -webkit-font-smoothing:antialiased; }
+  a { color:#9cc8e8; text-decoration:none; transition:color 240ms ease; }
+  a:hover { color:#ffffff; }
+  ::selection { background:rgba(125,178,221,0.35); }
+  input, textarea, select { font-family:'Roboto',system-ui,sans-serif; }
+  input::placeholder, textarea::placeholder { color:rgba(255,255,255,0.35); }
+  input:focus, textarea:focus, select:focus { outline:none; border-color:rgba(125,178,221,0.8); }
+</style>
+</helmet>
+<div style="position:relative;min-height:100vh;background:#050609;color:#ffffff;font-family:'Roboto',system-ui,sans-serif;overflow-x:clip">
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:0;background:radial-gradient(120% 80% at 40% -10%, rgba(125,178,221,0.16) 0%, rgba(5,6,9,0) 58%)"></div>
+
+  <dc-import name="SiteChrome" active="contact" hint-size="100%,64px"></dc-import>
+
+  <main style="position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:118px 22px 60px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:34px;align-items:end;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,0.14)">
+      <div style="min-width:0">
+        <h1 style="margin:20px 0 0;font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line-height:0.95;letter-spacing:-0.03em">Talk to us.</h1>
+        <p style="margin:22px 0 0;max-width:52ch;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.75)">Sponsor, mentor, judge, or partner on outreach. We read everything and reply within a week during the season.</p>
+      </div>
+      <div style="min-width:0;display:flex;flex-direction:column;gap:10px;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">
+        <p style="margin:0">Edison, NJ · USA</p>
+        <p style="margin:0"><a href="mailto:info@makemindsrobotics.org">info@makemindsrobotics.org</a></p>
+        <p style="margin:0"><a href="https://ftc-events.firstinspires.org/team/23786" target="_blank" rel="noopener noreferrer">ftc-events · team 23786</a></p>
+      </div>
+    </div>
+
+    <section style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:36px">
+      <div style="min-width:0">
+        <form id="contact-form" style="display:flex;flex-direction:column;gap:16px">
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.7)">Name</span>
+            <input name="name" type="text" required="required" placeholder="Your name" style="padding:14px 16px;border:1px solid rgba(255,255,255,0.18);border-radius:12px;background:rgba(255,255,255,0.05);color:#fff;font-size:15px;transition:border-color 240ms ease">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.7)">Email</span>
+            <input name="email" type="email" required="required" placeholder="you@example.com" style="padding:14px 16px;border:1px solid rgba(255,255,255,0.18);border-radius:12px;background:rgba(255,255,255,0.05);color:#fff;font-size:15px;transition:border-color 240ms ease">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.7)">Reason</span>
+            <select name="reason" style="padding:14px 16px;border:1px solid rgba(255,255,255,0.18);border-radius:12px;background:rgba(255,255,255,0.05);color:#fff;font-size:15px;transition:border-color 240ms ease">
+              <option style="background:#0a0c11">Sponsorship</option>
+              <option style="background:#0a0c11">Mentoring</option>
+              <option style="background:#0a0c11">Joining the team</option>
+              <option style="background:#0a0c11">Outreach or a demo</option>
+              <option style="background:#0a0c11">Something else</option>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.7)">Message</span>
+            <textarea name="message" rows="5" required="required" placeholder="Tell us what you have in mind." style="padding:14px 16px;border:1px solid rgba(255,255,255,0.18);border-radius:12px;background:rgba(255,255,255,0.05);color:#fff;font-size:15px;line-height:1.6;resize:vertical;transition:border-color 240ms ease"></textarea>
+          </label>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+            <button type="submit" style="display:inline-flex;align-items:center;padding:14px 24px;border:none;border-radius:999px;background:#f2f3f5;color:#050609;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:transform 260ms cubic-bezier(0.19,1,0.22,1)" style-hover="transform:translateY(-2px)">Send it →</button>
+            <p id="form-note" style="margin:0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">Opens your mail client</p>
+          </div>
+        </form>
+      </div>
+
+      <div style="min-width:0">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <a href="mailto:info@makemindsrobotics.org?subject=Sponsorship" style="display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid rgba(255,255,255,0.16);border-radius:16px;background:rgba(255,255,255,0.05);color:#fff;transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.6);transform:translateY(-3px)">
+            <span style="font-size:clamp(1.3rem,2.6vw,1.7rem);font-weight:600;line-height:1.1">Fund the build</span>
+            <span style="font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.7)">Registration, parts, and travel for the BIOBUZZ season.</span>
+          </a>
+          <a href="mailto:info@makemindsrobotics.org?subject=Mentoring" style="display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid rgba(255,255,255,0.16);border-radius:16px;background:rgba(255,255,255,0.05);color:#fff;transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.6);transform:translateY(-3px)">
+            <span style="font-size:clamp(1.3rem,2.6vw,1.7rem);font-weight:600;line-height:1.1">Give us hours</span>
+            <span style="font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.7)">Engineers, machinists, and software folks, in person or remote.</span>
+          </a>
+          <a href="mailto:info@makemindsrobotics.org?subject=Joining" style="display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid rgba(255,255,255,0.16);border-radius:16px;background:rgba(255,255,255,0.05);color:#fff;transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.6);transform:translateY(-3px)">
+            <span style="font-size:clamp(1.3rem,2.6vw,1.7rem);font-weight:600;line-height:1.1">Try out</span>
+            <span style="font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.7)">Edison-area student? Tryouts open before each season.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="position:relative;z-index:10;padding:0 22px 40px">
+    <div style="display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding-top:26px;border-top:1px solid rgba(255,255,255,0.14)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="assets/makeminds-mark.png" alt="" style="width:30px;height:30px;object-fit:contain;display:block">
+        <div>
+          <p style="margin:0;font-size:15px;font-weight:600">MakEMinds Robotics</p>
+          <p style="margin:5px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">FTC 23786 · Edison, NJ · © 2026</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;font-family:'Montserrat',sans-serif;font-size:14px">
+        <a href="mailto:info@makemindsrobotics.org">info@makemindsrobotics.org</a>
+        <a href="https://ftc-events.firstinspires.org/team/23786" target="_blank" rel="noopener noreferrer">ftc-events</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const form = document.getElementById('contact-form');
+    if (!form || form.dataset.wired) return;
+    form.dataset.wired = '1';
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const d = new FormData(form);
+      const body = 'Name: ' + (d.get('name') || '') + '\nEmail: ' + (d.get('email') || '') + '\n\n' + (d.get('message') || '');
+      const note = document.getElementById('form-note');
+      if (note) note.textContent = 'Opening your mail client…';
+      window.location.href = 'mailto:info@makemindsrobotics.org?subject='
+        + encodeURIComponent('[' + (d.get('reason') || 'Website') + '] MakEMinds site')
+        + '&body=' + encodeURIComponent(body);
+    });
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

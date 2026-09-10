@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#050609; scrollbar-width:none; -ms-overflow-style:none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { width:0; height:0; }
+  body { -webkit-font-smoothing:antialiased; }
+  a { color:#9cc8e8; text-decoration:none; transition:color 240ms ease; }
+  a:hover { color:#ffffff; }
+  ::selection { background:rgba(125,178,221,0.35); }
+</style>
+</helmet>
+<div style="position:relative;min-height:100vh;background:#050609;color:#ffffff;font-family:'Roboto',system-ui,sans-serif;overflow-x:clip">
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:0;background:radial-gradient(120% 80% at 70% -10%, rgba(125,178,221,0.16) 0%, rgba(5,6,9,0) 58%)"></div>
+
+  <dc-import name="SiteChrome" active="robot" hint-size="100%,64px"></dc-import>
+
+  <main style="position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:118px 22px 60px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:34px;align-items:end;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,0.14)">
+      <div style="min-width:0">
+        <h1 style="margin:20px 0 0;font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line-height:0.95;letter-spacing:-0.03em">The 2025–26<br>machine.</h1>
+        <p style="margin:22px 0 0;max-width:52ch;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.75)">Mecanum drive, a two-stage lift, and an AprilTag-fused autonomous. Built for DECODE, tuned across ten events, and the testbed for the BIOBUZZ intake.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,100px),1fr));gap:20px;min-width:0">
+        <div><p style="margin:0;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;line-height:0.9">16.2</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">kg mass</p></div>
+        <div><p style="margin:0;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;line-height:0.9">1.8</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">m/s top speed</p></div>
+        <div><p style="margin:0;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;line-height:0.9;color:#7db2dd">04</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Auto routines</p></div>
+      </div>
+    </div>
+
+    <section style="margin-top:44px">
+      <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px">
+        <div style="border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.04);padding:20px"><dt style="font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Season</dt><dd style="margin:10px 0 0;font-size:19px;font-weight:600">DECODE</dd></div>
+        <div style="border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.04);padding:20px"><dt style="font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Year</dt><dd style="margin:10px 0 0;font-size:19px;font-weight:600">2025–26</dd></div>
+        <div style="border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.04);padding:20px"><dt style="font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Mass</dt><dd style="margin:10px 0 0;font-size:19px;font-weight:600">16.2 kg</dd></div>
+        <div style="border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.04);padding:20px"><dt style="font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Drivetrain</dt><dd style="margin:10px 0 0;font-size:19px;font-weight:600">Mecanum</dd></div>
+        <div style="border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.04);padding:20px"><dt style="font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Top speed</dt><dd style="margin:10px 0 0;font-size:19px;font-weight:600">1.8 m/s</dd></div>
+        <div style="border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.04);padding:20px"><dt style="font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Auto routines</dt><dd style="margin:10px 0 0;font-size:19px;font-weight:600">04</dd></div>
+        <div style="border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.04);padding:20px"><dt style="font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Vision</dt><dd style="margin:10px 0 0;font-size:19px;font-weight:600">AprilTag</dd></div>
+        <div style="border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.04);padding:20px"><dt style="font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Control</dt><dd style="margin:10px 0 0;font-size:19px;font-weight:600">Java · OnBot</dd></div>
+      </dl>
+    </section>
+
+    <section style="margin-top:56px">
+      <div style="display:flex;flex-direction:column">
+        <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px;padding:26px 0;border-top:1px solid rgba(255,255,255,0.14)">
+          <div style="min-width:0"><p style="margin:12px 0 0;font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:600;line-height:1.1">Mecanum chassis, v2</p></div>
+          <p style="margin:0;grid-column:span 2;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72);min-width:0">Rebuilt after states: lower centre of gravity, a wider wheelbase, and bracing that survives defense. Field-oriented control on the driver hub means the rookie drivers stopped losing heading under pressure.</p>
+        </article>
+        <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px;padding:26px 0;border-top:1px solid rgba(255,255,255,0.14)">
+          <div style="min-width:0"><p style="margin:12px 0 0;font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:600;line-height:1.1">Two-stage cascade</p></div>
+          <p style="margin:0;grid-column:span 2;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72);min-width:0">Three presets on a tuned PID loop. It went from overshooting into the hardstops to settling in 220 ms with no oscillation — three tuning sessions, documented in the notebook.</p>
+        </article>
+        <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px;padding:26px 0;border-top:1px solid rgba(255,255,255,0.14)">
+          <div style="min-width:0"><p style="margin:12px 0 0;font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:600;line-height:1.1">Compliant-wheel intake</p></div>
+          <p style="margin:0;grid-column:span 2;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72);min-width:0">Printed compliant wheels on a sprung arm, forgiving on approach angle. This is the subsystem carrying straight into BIOBUZZ, where Pollen rewards fast repeatable pickup.</p>
+        </article>
+        <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px;padding:26px 0;border-block:1px solid rgba(255,255,255,0.14)">
+          <div style="min-width:0"><p style="margin:12px 0 0;font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:600;line-height:1.1">AprilTag pose fusion</p></div>
+          <p style="margin:0;grid-column:span 2;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72);min-width:0">Limelight 3A tag estimates fused with wheel odometry, which is what let us ship four autonomous routines in nine days instead of guessing at dead reckoning.</p>
+        </article>
+      </div>
+    </section>
+
+    <section style="margin-top:56px">
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:baseline">
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px;margin-top:22px">
+        <div style="aspect-ratio:4/3;border:1px solid rgba(255,255,255,0.12);border-radius:12px;background:rgba(255,255,255,0.04);display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Front three-quarter</div>
+        <div style="aspect-ratio:4/3;border:1px solid rgba(255,255,255,0.12);border-radius:12px;background:rgba(255,255,255,0.04);display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Lift extended</div>
+        <div style="aspect-ratio:4/3;border:1px solid rgba(255,255,255,0.12);border-radius:12px;background:rgba(255,255,255,0.04);display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Intake detail</div>
+        <div style="aspect-ratio:4/3;border:1px solid rgba(255,255,255,0.12);border-radius:12px;background:rgba(255,255,255,0.04);display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Wiring bay</div>
+      </div>
+      <p style="margin:26px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.7)">Build history, tuning logs, and design reviews live in the <a href="Notebook.dc.html">notebook</a>.</p>
+    </section>
+  </main>
+
+  <footer style="position:relative;z-index:10;padding:0 22px 40px">
+    <div style="display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding-top:26px;border-top:1px solid rgba(255,255,255,0.14)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="assets/makeminds-mark.png" alt="" style="width:30px;height:30px;object-fit:contain;display:block">
+        <div>
+          <p style="margin:0;font-size:15px;font-weight:600">MakEMinds Robotics</p>
+          <p style="margin:5px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">FTC 23786 · Edison, NJ · © 2026</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;font-family:'Montserrat',sans-serif;font-size:14px">
+        <a href="mailto:info@makemindsrobotics.org">info@makemindsrobotics.org</a>
+        <a href="https://ftc-events.firstinspires.org/team/23786" target="_blank" rel="noopener noreferrer">ftc-events</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

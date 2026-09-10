@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#050609; scrollbar-width:none; -ms-overflow-style:none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { width:0; height:0; }
+  #menu-scroll { scrollbar-width:none; -ms-overflow-style:none; }
+  #menu-scroll::-webkit-scrollbar { width:0; height:0; }
+  body { -webkit-font-smoothing:antialiased; }
+  a { color:#9cc8e8; text-decoration:none; transition:color 240ms ease; }
+  a:hover { color:#ffffff; }
+  ::selection { background:rgba(125,178,221,0.35); }
+</style>
+</helmet>
+<div style="font-family:'Roboto',system-ui,sans-serif">
+
+  <div id="bulb-rail" aria-hidden="true" style="position:fixed;right:12px;top:78px;bottom:16px;width:30px;z-index:68;pointer-events:none">
+    <div style="position:absolute;left:14px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,rgba(125,178,221,0) 0%,rgba(125,178,221,0.22) 12%,rgba(125,178,221,0.22) 88%,rgba(125,178,221,0) 100%)"></div>
+    <span data-trail="0" style="position:absolute;left:0;top:0;width:30px;text-align:center;font-family:'Montserrat',sans-serif;font-size:9px;color:#7db2dd;opacity:0">{ }</span>
+    <span data-trail="1" style="position:absolute;left:0;top:0;width:30px;text-align:center;font-family:'Montserrat',sans-serif;font-size:9px;color:#7db2dd;opacity:0">01</span>
+    <span data-trail="2" style="position:absolute;left:0;top:0;width:30px;text-align:center;font-family:'Montserrat',sans-serif;font-size:9px;color:#7db2dd;opacity:0">&lt;/&gt;</span>
+    <span data-trail="3" style="position:absolute;left:0;top:0;width:30px;text-align:center;font-family:'Montserrat',sans-serif;font-size:9px;color:#7db2dd;opacity:0">;</span>
+    <span data-trail="4" style="position:absolute;left:0;top:0;width:30px;text-align:center;font-family:'Montserrat',sans-serif;font-size:9px;color:#7db2dd;opacity:0">10</span>
+    <span data-trail="5" style="position:absolute;left:0;top:0;width:30px;text-align:center;font-family:'Montserrat',sans-serif;font-size:9px;color:#7db2dd;opacity:0">( )</span>
+    <span data-trail="6" style="position:absolute;left:0;top:0;width:30px;text-align:center;font-family:'Montserrat',sans-serif;font-size:9px;color:#7db2dd;opacity:0">=&gt;</span>
+    <div id="bulb" style="position:absolute;left:3px;top:0;width:24px;height:24px;will-change:transform">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#7db2dd" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="display:block;transform:rotate(180deg);filter:drop-shadow(0 0 8px rgba(125,178,221,0.85))">
+        <path d="M9 17.5h6M10 20.5h4"></path>
+        <path d="M12 2.8a6.2 6.2 0 0 0-3.6 11.2v1.5h7.2V14A6.2 6.2 0 0 0 12 2.8Z" fill="rgba(125,178,221,0.22)"></path>
+        <path d="M12 7.4v4.4"></path>
+      </svg>
+    </div>
+  </div>
+
+  <header id="topbar" style="position:fixed;inset-inline:0;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 54px 14px 22px">
+    <a href="MakEMinds%20Motion.dc.html" style="display:flex;align-items:center;gap:11px;color:#fff;flex:0 0 auto">
+      <img src="assets/makeminds-mark.png" alt="MakEMinds Robotics" style="width:32px;height:32px;object-fit:contain;display:block;filter:drop-shadow(0 2px 10px rgba(0,0,0,0.7))">
+      <span style="font-size:16px;font-weight:600;letter-spacing:-0.01em;text-shadow:0 2px 12px rgba(0,0,0,0.7)">MakEMinds</span>
+    </a>
+
+    <div style="display:flex;align-items:center;gap:12px;flex:0 0 auto">
+      <a id="nav-mini" href="MakEMinds%20Motion.dc.html#contact" style="display:none;align-items:center;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-family:'Montserrat',sans-serif;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#fff;white-space:nowrap">Contact</a>
+
+      <div id="nav-wrap" style="position:relative;display:block;width:max-content;min-width:0;flex:0 0 auto">
+        <svg id="nav-svg" aria-hidden="true" focusable="false" width="100%" height="100%" style="position:absolute;inset:0;z-index:0;pointer-events:none;overflow:visible">
+          <defs>
+            <radialGradient id="nav-glow" gradientUnits="userSpaceOnUse" cx="-9999" cy="-9999" r="110">
+              <stop offset="0" stop-color="#7db2dd" stop-opacity="0.95"></stop>
+              <stop offset="0.45" stop-color="#7db2dd" stop-opacity="0.45"></stop>
+              <stop offset="1" stop-color="#7db2dd" stop-opacity="0"></stop>
+            </radialGradient>
+          </defs>
+          <path id="nav-base" d="" fill="rgba(255,255,255,0.10)" fill-rule="nonzero"></path>
+          <path id="nav-halo" d="" fill="url(#nav-glow)" fill-rule="nonzero" opacity="0" style="transition:opacity 320ms ease"></path>
+        </svg>
+        <nav aria-label="Primary" style="position:relative;z-index:1;display:flex;align-items:center;gap:14px;width:max-content">
+
+          <a data-nav="home" data-hash="film-top" href="MakEMinds%20Motion.dc.html#film-top" style="position:relative;display:flex;align-items:center;justify-content:center;padding:11px 18px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.78);white-space:nowrap;transition:color 260ms ease" style-hover="color:#ffffff">Home<span data-dot="" style="position:absolute;left:50%;bottom:5px;width:3px;height:3px;margin-left:-1.5px;border-radius:50%;background:currentColor;opacity:0;transition:opacity 260ms ease"></span></a>
+          <a data-nav="season" data-hash="season" href="MakEMinds%20Motion.dc.html#season" style="position:relative;display:flex;align-items:center;justify-content:center;padding:11px 18px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.78);white-space:nowrap;transition:color 260ms ease" style-hover="color:#ffffff">Season<span data-dot="" style="position:absolute;left:50%;bottom:5px;width:3px;height:3px;margin-left:-1.5px;border-radius:50%;background:currentColor;opacity:0;transition:opacity 260ms ease"></span></a>
+          <a data-nav="record" data-hash="record" href="MakEMinds%20Motion.dc.html#record" style="position:relative;display:flex;align-items:center;justify-content:center;padding:11px 18px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.78);white-space:nowrap;transition:color 260ms ease" style-hover="color:#ffffff">Record<span data-dot="" style="position:absolute;left:50%;bottom:5px;width:3px;height:3px;margin-left:-1.5px;border-radius:50%;background:currentColor;opacity:0;transition:opacity 260ms ease"></span></a>
+          <a data-nav="programs" data-hash="programs" href="MakEMinds%20Motion.dc.html#programs" style="position:relative;display:flex;align-items:center;justify-content:center;padding:11px 18px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.78);white-space:nowrap;transition:color 260ms ease" style-hover="color:#ffffff">Programs<span data-dot="" style="position:absolute;left:50%;bottom:5px;width:3px;height:3px;margin-left:-1.5px;border-radius:50%;background:currentColor;opacity:0;transition:opacity 260ms ease"></span></a>
+          <a data-nav="contact" data-hash="contact" href="MakEMinds%20Motion.dc.html#contact" style="position:relative;display:flex;align-items:center;justify-content:center;padding:11px 18px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.78);white-space:nowrap;transition:color 260ms ease" style-hover="color:#ffffff">Contact<span data-dot="" style="position:absolute;left:50%;bottom:5px;width:3px;height:3px;margin-left:-1.5px;border-radius:50%;background:currentColor;opacity:0;transition:opacity 260ms ease"></span></a>
+        </nav>
+      </div>
+
+      <button id="menu-btn" type="button" aria-label="Open index" aria-expanded="false" style="display:flex;align-items:center;gap:9px;padding:10px 14px;border:1px solid rgba(255,255,255,0.22);border-radius:999px;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-family:'Montserrat',sans-serif;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#fff;cursor:pointer;transition:border-color 260ms ease,background 260ms ease" style-hover="border-color:rgba(125,178,221,0.7);background:rgba(125,178,221,0.16)"><span aria-hidden="true" style="display:flex;flex-direction:column;gap:3px"><span style="display:block;width:13px;height:1px;background:currentColor"></span><span style="display:block;width:13px;height:1px;background:currentColor"></span></span>Index</button>
+    </div>
+  </header>
+
+  <div id="menu-overlay" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true" style="position:fixed;inset:0;z-index:90;pointer-events:none">
+    <div id="menu-bars" aria-hidden="true" style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr)">
+      <span style="height:100%;transform-origin:top;transform:scaleY(0);background:#080a0e;transition:transform 520ms cubic-bezier(0.19,1,0.22,1)"></span>
+      <span style="height:100%;transform-origin:top;transform:scaleY(0);background:#080a0e;transition:transform 520ms cubic-bezier(0.19,1,0.22,1)"></span>
+      <span style="height:100%;transform-origin:top;transform:scaleY(0);background:#080a0e;transition:transform 520ms cubic-bezier(0.19,1,0.22,1)"></span>
+      <span style="height:100%;transform-origin:top;transform:scaleY(0);background:#080a0e;transition:transform 520ms cubic-bezier(0.19,1,0.22,1)"></span>
+      <span style="height:100%;transform-origin:top;transform:scaleY(0);background:#080a0e;transition:transform 520ms cubic-bezier(0.19,1,0.22,1)"></span>
+      <span style="height:100%;transform-origin:top;transform:scaleY(0);background:#080a0e;transition:transform 520ms cubic-bezier(0.19,1,0.22,1)"></span>
+      <span style="height:100%;transform-origin:top;transform:scaleY(0);background:#080a0e;transition:transform 520ms cubic-bezier(0.19,1,0.22,1)"></span>
+      <span style="height:100%;transform-origin:top;transform:scaleY(0);background:#080a0e;transition:transform 520ms cubic-bezier(0.19,1,0.22,1)"></span>
+      <span style="height:100%;transform-origin:top;transform:scaleY(0);background:#080a0e;transition:transform 520ms cubic-bezier(0.19,1,0.22,1)"></span>
+      <span style="height:100%;transform-origin:top;transform:scaleY(0);background:#080a0e;transition:transform 520ms cubic-bezier(0.19,1,0.22,1)"></span>
+      <span style="height:100%;transform-origin:top;transform:scaleY(0);background:#080a0e;transition:transform 520ms cubic-bezier(0.19,1,0.22,1)"></span>
+      <span style="height:100%;transform-origin:top;transform:scaleY(0);background:#080a0e;transition:transform 520ms cubic-bezier(0.19,1,0.22,1)"></span>
+    </div>
+    <div id="menu-content" style="position:relative;height:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:20px;padding:22px 54px 22px 22px;opacity:0;transition:opacity 420ms ease">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.1)">
+        <button id="menu-close" type="button" aria-label="Close menu" style="display:flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid rgba(255,255,255,0.22);border-radius:999px;background:transparent;font-family:'Montserrat',sans-serif;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#fff;cursor:pointer;transition:border-color 240ms ease,color 240ms ease" style-hover="border-color:#7db2dd;color:#7db2dd"><span aria-hidden="true" style="font-family:'Montserrat',sans-serif;font-size:13px;line-height:1">×</span>Close</button>
+      </div>
+
+      <div id="menu-scroll" style="display:flex;flex-wrap:wrap;gap:28px;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden">
+        <nav aria-label="All pages" style="display:flex;flex-direction:column;flex:1 1 460px;min-width:0;min-height:0">
+          <a data-menu-item="0" href="MakEMinds%20Motion.dc.html" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;padding:min(12px,1.3vh) 8px;border-bottom:1px solid rgba(255,255,255,0.09);color:rgba(255,255,255,0.6);transition:color 220ms ease,background 220ms ease,padding-left 220ms ease" style-hover="color:#ffffff;background:rgba(125,178,221,0.08);padding-left:16px"><span style="font-size:min(clamp(1.4rem,4.2vw,2.7rem),6vh);font-weight:700;line-height:1;letter-spacing:-0.025em">Home</span><span aria-hidden="true" style="font-family:'Montserrat',sans-serif;font-size:12px;color:rgba(255,255,255,0.3)">→</span></a>
+          <a data-menu-item="1" href="Team.dc.html" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;padding:min(12px,1.3vh) 8px;border-bottom:1px solid rgba(255,255,255,0.09);color:rgba(255,255,255,0.6);transition:color 220ms ease,background 220ms ease,padding-left 220ms ease" style-hover="color:#ffffff;background:rgba(125,178,221,0.08);padding-left:16px"><span style="font-size:min(clamp(1.4rem,4.2vw,2.7rem),6vh);font-weight:700;line-height:1;letter-spacing:-0.025em">Team</span><span aria-hidden="true" style="font-family:'Montserrat',sans-serif;font-size:12px;color:rgba(255,255,255,0.3)">→</span></a>
+          <a data-menu-item="2" href="Programs.dc.html" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;padding:min(12px,1.3vh) 8px;border-bottom:1px solid rgba(255,255,255,0.09);color:rgba(255,255,255,0.6);transition:color 220ms ease,background 220ms ease,padding-left 220ms ease" style-hover="color:#ffffff;background:rgba(125,178,221,0.08);padding-left:16px"><span style="font-size:min(clamp(1.4rem,4.2vw,2.7rem),6vh);font-weight:700;line-height:1;letter-spacing:-0.025em">Programs</span><span aria-hidden="true" style="font-family:'Montserrat',sans-serif;font-size:12px;color:rgba(255,255,255,0.3)">→</span></a>
+          <a data-menu-item="3" href="Robot.dc.html" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;padding:min(12px,1.3vh) 8px;border-bottom:1px solid rgba(255,255,255,0.09);color:rgba(255,255,255,0.6);transition:color 220ms ease,background 220ms ease,padding-left 220ms ease" style-hover="color:#ffffff;background:rgba(125,178,221,0.08);padding-left:16px"><span style="font-size:min(clamp(1.4rem,4.2vw,2.7rem),6vh);font-weight:700;line-height:1;letter-spacing:-0.025em">Robot</span><span aria-hidden="true" style="font-family:'Montserrat',sans-serif;font-size:12px;color:rgba(255,255,255,0.3)">→</span></a>
+          <a data-menu-item="4" href="Achievements.dc.html" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;padding:min(12px,1.3vh) 8px;border-bottom:1px solid rgba(255,255,255,0.09);color:rgba(255,255,255,0.6);transition:color 220ms ease,background 220ms ease,padding-left 220ms ease" style-hover="color:#ffffff;background:rgba(125,178,221,0.08);padding-left:16px"><span style="font-size:min(clamp(1.4rem,4.2vw,2.7rem),6vh);font-weight:700;line-height:1;letter-spacing:-0.025em">Achievements</span><span aria-hidden="true" style="font-family:'Montserrat',sans-serif;font-size:12px;color:rgba(255,255,255,0.3)">→</span></a>
+          <a data-menu-item="5" href="Sponsors.dc.html" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;padding:min(12px,1.3vh) 8px;border-bottom:1px solid rgba(255,255,255,0.09);color:rgba(255,255,255,0.6);transition:color 220ms ease,background 220ms ease,padding-left 220ms ease" style-hover="color:#ffffff;background:rgba(125,178,221,0.08);padding-left:16px"><span style="font-size:min(clamp(1.4rem,4.2vw,2.7rem),6vh);font-weight:700;line-height:1;letter-spacing:-0.025em">Sponsors</span><span aria-hidden="true" style="font-family:'Montserrat',sans-serif;font-size:12px;color:rgba(255,255,255,0.3)">→</span></a>
+          <a data-menu-item="6" href="Notebook.dc.html" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;padding:min(12px,1.3vh) 8px;border-bottom:1px solid rgba(255,255,255,0.09);color:rgba(255,255,255,0.6);transition:color 220ms ease,background 220ms ease,padding-left 220ms ease" style-hover="color:#ffffff;background:rgba(125,178,221,0.08);padding-left:16px"><span style="font-size:min(clamp(1.4rem,4.2vw,2.7rem),6vh);font-weight:700;line-height:1;letter-spacing:-0.025em">Notebook</span><span aria-hidden="true" style="font-family:'Montserrat',sans-serif;font-size:12px;color:rgba(255,255,255,0.3)">→</span></a>
+          <a data-menu-item="7" href="Contact.dc.html" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;padding:min(12px,1.3vh) 8px;border-bottom:1px solid rgba(255,255,255,0.09);color:rgba(255,255,255,0.6);transition:color 220ms ease,background 220ms ease,padding-left 220ms ease" style-hover="color:#ffffff;background:rgba(125,178,221,0.08);padding-left:16px"><span style="font-size:min(clamp(1.4rem,4.2vw,2.7rem),6vh);font-weight:700;line-height:1;letter-spacing:-0.025em">Contact</span><span aria-hidden="true" style="font-family:'Montserrat',sans-serif;font-size:12px;color:rgba(255,255,255,0.3)">→</span></a>
+        </nav>
+
+        <aside aria-live="polite" style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;flex:1 1 250px;min-width:0;border-left:1px solid rgba(255,255,255,0.1);padding-left:26px">
+          <div>
+            <p id="menu-label" style="margin:8px 0 0;font-size:28px;font-weight:700;line-height:1.1;letter-spacing:-0.02em">Home</p>
+            <p id="menu-blurb" style="margin:12px 0 0;max-width:32ch;font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.68)">Mission, the season film, and where we stand right now.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.5)">
+            <p style="margin:0">FTC team 23786 · Edison, NJ</p>
+            <p style="margin:0">Season 2026–27 · BIOBUZZ</p>
+            <p style="margin:0">info@makemindsrobotics.org</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;home&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;team&quot;,&quot;programs&quot;,&quot;robot&quot;,&quot;contact&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
+const clamp01 = v => (v < 0 ? 0 : v > 1 ? 1 : v);
+const rnd = v => (Math.round(v * 100) / 100).toString();
+
+function pillPath(r, radius) {
+  const rr = Math.min(radius, r.width / 2, r.height / 2);
+  const { x, y, width: w, height: h } = r;
+  return ['M' + rnd(x) + ' ' + rnd(y + rr),
+    'A' + rnd(rr) + ' ' + rnd(rr) + ' 0 0 1 ' + rnd(x + rr) + ' ' + rnd(y),
+    'L' + rnd(x + w - rr) + ' ' + rnd(y),
+    'A' + rnd(rr) + ' ' + rnd(rr) + ' 0 0 1 ' + rnd(x + w) + ' ' + rnd(y + rr),
+    'L' + rnd(x + w) + ' ' + rnd(y + h - rr),
+    'A' + rnd(rr) + ' ' + rnd(rr) + ' 0 0 1 ' + rnd(x + w - rr) + ' ' + rnd(y + h),
+    'L' + rnd(x + rr) + ' ' + rnd(y + h),
+    'A' + rnd(rr) + ' ' + rnd(rr) + ' 0 0 1 ' + rnd(x) + ' ' + rnd(y + h - rr), 'Z'].join(' ');
+}
+
+function waistPath(left, right, radius, neck, openness) {
+  if (openness <= 0.02) return null;
+  const h = left.height;
+  const cy = left.y + h / 2;
+  const r = Math.min(radius, h / 2, left.width / 2, right.width / 2);
+  if (r <= 0) return null;
+  const xa = left.x + left.width;
+  const xb = right.x;
+  const gap = xb - xa;
+  if (gap < 0) return null;
+  const waistHalf = Math.min((neck / 2) * openness, h / 2 - 0.5);
+  const across = gap / 2 + r;
+  const drop = waistHalf - h / 2 + r;
+  const denom = 2 * (drop - r);
+  if (Math.abs(denom) < 0.0001) return null;
+  const fillet = (r * r - across * across - drop * drop) / denom;
+  if (!(fillet > 0) || r + fillet < across) return null;
+  const rise = Math.sqrt(Math.max(0, (r + fillet) * (r + fillet) - across * across));
+  const midX = (xa + xb) / 2;
+  const cornerX = xa - r;
+  const cornerY = left.y + r;
+  const vx = midX - cornerX;
+  const vy = left.y + r - rise - cornerY;
+  const len = Math.hypot(vx, vy) || 1;
+  const tax = cornerX + (r * vx) / len;
+  const tay = cornerY + (r * vy) / len;
+  const tbx = 2 * midX - tax;
+  return ['M' + rnd(tax) + ' ' + rnd(tay),
+    'A' + rnd(fillet) + ' ' + rnd(fillet) + ' 0 0 0 ' + rnd(tbx) + ' ' + rnd(tay),
+    'L' + rnd(tbx) + ' ' + rnd(2 * cy - tay),
+    'A' + rnd(fillet) + ' ' + rnd(fillet) + ' 0 0 0 ' + rnd(tax) + ' ' + rnd(2 * cy - tay), 'Z'].join(' ');
+}
+
+class Component extends DCLogic {
+  static COPY = [
+    ['Home', 'Mission, the season film, and where we stand right now.'],
+    ['Team', 'Roster, roles, build leads, mentor crew.'],
+    ['Programs', 'FTC, FLL, HackEMinds, outreach. Season timeline.'],
+    ['Robot', 'Current-season robot. Specs. Subsystems.'],
+    ['Achievements', '27 events, 8 awards, climbing.'],
+    ['Sponsors', 'Who funds the build. Sponsor packet.'],
+    ['Notebook', 'Engineering blog. Build-season tags.'],
+    ['Contact', 'Talk to us. Sponsor, mentor, judge, partner.']
+  ];
+
+  componentDidMount() {
+    this.push = 10;
+    this.open = [];
+    this.hovered = null;
+    this.pointerIn = false;
+    this.smooth = 0;
+    this.target = 0;
+    this.history = [];
+    this.last = performance.now();
+    // The loop is the whole component; nothing in setup is allowed to stop it
+    // from starting, or the header freezes with an empty shape.
+    try { this.collect(); } catch (e) { console.error('chrome collect', e); }
+    try { this.bind(); } catch (e) { console.error('chrome bind', e); }
+    this._raf = requestAnimationFrame(t => this.tick(t));
+    // rAF is paused while the tab or preview is hidden, so the shape is also
+    // drawn straight away and on every wake — never left empty.
+    this.drawNav(16);
+    this._wake = () => { this.last = performance.now(); this.drawNav(16); };
+    document.addEventListener('visibilitychange', this._wake);
+    window.addEventListener('focus', this._wake);
+  }
+
+  componentDidUpdate() { this.collect(); this.drawNav(16); }
+
+  collect() {
+    const d = document;
+    this.topbar = d.getElementById('topbar');
+    this.brand = this.topbar && this.topbar.querySelector('a');
+    this.navWrap = d.getElementById('nav-wrap');
+    this.navMini = d.getElementById('nav-mini');
+    this.navBase = d.getElementById('nav-base');
+    this.navHalo = d.getElementById('nav-halo');
+    this.navGrad = d.getElementById('nav-glow');
+    this.navItems = Array.from(d.querySelectorAll('[data-nav]'));
+    this.bulb = d.getElementById('bulb');
+    this.bulbRail = d.getElementById('bulb-rail');
+    this.trail = Array.from(d.querySelectorAll('[data-trail]'));
+    if (this.open.length !== Math.max(0, this.navItems.length - 1)) {
+      this.open = new Array(Math.max(0, this.navItems.length - 1)).fill(0);
+    }
+    // The pills are the home page's own sections, so on the home page the dot
+    // follows the section being read; on a subpage no pill is current.
+    this.sections = this.navItems.map(a => d.getElementById(a.dataset.hash));
+    this.onHome = this.sections.some(Boolean);
+    if (!this.onHome) this.active = -1;
+    this.navItems.forEach(a => {
+      if (a.dataset.wired) return;
+      a.dataset.wired = '1';
+      a.addEventListener('click', e => {
+        const target = document.getElementById(a.dataset.hash);
+        if (!target) return; // a subpage: let the link load the home page
+        e.preventDefault();
+        this.glide(target);
+      });
+    });
+
+    this.menu = d.getElementById('menu-overlay');
+    if (this.menu) {
+      const bars = d.getElementById('menu-bars');
+      this.menuBars = bars ? Array.from(bars.children) : [];
+      this.menuContent = d.getElementById('menu-content');
+      this.menuLabel = d.getElementById('menu-label');
+      this.menuBlurb = d.getElementById('menu-blurb');
+      const btn = d.getElementById('menu-btn');
+      const close = d.getElementById('menu-close');
+      if (btn && !btn.dataset.wired) { btn.dataset.wired = '1'; btn.addEventListener('click', () => this.setMenu(true)); }
+      if (close && !close.dataset.wired) { close.dataset.wired = '1'; close.addEventListener('click', () => this.setMenu(false)); }
+      Array.from(d.querySelectorAll('[data-menu-item]')).forEach(a => {
+        if (a.dataset.wired) return;
+        a.dataset.wired = '1';
+        const i = Number(a.dataset.menuItem);
+        const show = () => {
+          const c = Component.COPY[i];
+          if (!c) return;
+          if (this.menuLabel) this.menuLabel.textContent = c[0];
+          if (this.menuBlurb) this.menuBlurb.textContent = c[1];
+        };
+        a.addEventListener('mouseenter', show);
+        a.addEventListener('focus', show);
+      });
+      if (!this._esc) {
+        this._esc = e => { if (e.key === 'Escape') this.setMenu(false); };
+        window.addEventListener('keydown', this._esc);
+      }
+    }
+  }
+
+  bind() {
+    this._read = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      this.target = max > 0 ? clamp01(window.scrollY / max) : 0;
+    };
+    this._read();
+    window.addEventListener('scroll', this._read, { passive: true });
+    window.addEventListener('resize', this._read);
+
+    this._pointer = e => {
+      if (!this.navWrap || this.navWide === false) return;
+      const b = this.navWrap.getBoundingClientRect();
+      const inside = e.clientX >= b.left - 30 && e.clientX <= b.right + 30 && e.clientY >= b.top - 20 && e.clientY <= b.bottom + 20;
+      if (!inside) { this.hovered = null; this.pointerIn = false; return; }
+      const x = e.clientX - b.left;
+      if (this.navGrad) {
+        this.navGrad.setAttribute('cx', String(x));
+        this.navGrad.setAttribute('cy', String(e.clientY - b.top));
+      }
+      let nearest = null, shortest = Infinity;
+      this.rects().forEach((r, i) => {
+        const dist = x < r.x ? r.x - x : x > r.x + r.width ? x - (r.x + r.width) : 0;
+        if (dist < shortest) { shortest = dist; nearest = i; }
+      });
+      this.hovered = nearest;
+      this.pointerIn = true;
+    };
+    document.addEventListener('mousemove', this._pointer, { passive: true });
+  }
+
+  rects() {
+    if (!this.navWrap) return [];
+    return this.navItems.map(el => {
+      let x = el.offsetLeft, y = el.offsetTop, p = el.offsetParent;
+      while (p && p !== this.navWrap) { x += p.offsetLeft; y += p.offsetTop; p = p.offsetParent; }
+      return { x, y, width: el.offsetWidth, height: el.offsetHeight };
+    });
+  }
+
+  // A bare anchor jumps; taking the click over is the only way to ease it.
+  glide(target) {
+    const to = target.getBoundingClientRect().top + window.scrollY;
+    const from = window.scrollY;
+    const dist = to - from;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches || Math.abs(dist) < 1) {
+      window.scrollTo(0, to);
+      return;
+    }
+    cancelAnimationFrame(this._glide);
+    const began = performance.now();
+    const dur = 700;
+    this.lockUntil = began + dur + 150;
+    const ease = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    const step = now => {
+      const p = Math.min((now - began) / dur, 1);
+      window.scrollTo(0, from + dist * ease(p));
+      if (p < 1) this._glide = requestAnimationFrame(step);
+    };
+    this._glide = requestAnimationFrame(step);
+  }
+
+  // Whichever section crosses the middle of the viewport is the one being read.
+  readSection() {
+    if (!this.onHome || !this.sections) return;
+    if (performance.now() < (this.lockUntil || 0)) return;
+    const line = window.innerHeight * 0.45;
+    let found = -1;
+    this.sections.forEach((el, i) => {
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      if (r.top <= line && r.bottom > line) found = i;
+    });
+    if (found !== -1) this.active = found;
+  }
+
+  setMenu(open) {
+    if (!this.menu || this.menuOpen === open) return;
+    this.menuOpen = open;
+    this.menu.style.pointerEvents = open ? 'auto' : 'none';
+    this.menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+    const btn = document.getElementById('menu-btn');
+    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    this.menuBars.forEach((bar, i) => {
+      bar.style.transitionDelay = (open ? i * 18 : (this.menuBars.length - 1 - i) * 14) + 'ms';
+      bar.style.transform = 'scaleY(' + (open ? 1 : 0) + ')';
+    });
+    if (this.menuContent) {
+      this.menuContent.style.transitionDelay = open ? '260ms' : '0ms';
+      this.menuContent.style.opacity = open ? '1' : '0';
+    }
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    if (open) {
+      const close = document.getElementById('menu-close');
+      if (close) setTimeout(() => close.focus(), 300);
+    }
+  }
+
+  fitNav() {
+    if (!this.navWrap || !this.topbar) return true;
+    const btn = document.getElementById('menu-btn');
+    // Measured from the row's own resting extent each time rather than cached —
+    // a stale cache from a previous type size makes the row vanish.
+    if (this.navWrap.offsetWidth) {
+      const r = this.rects();
+      if (r.length) this.navFullWidth = r[r.length - 1].x + r[r.length - 1].width - r[0].x + this.push * (r.length - 1);
+    }
+    const need = (this.navFullWidth || this.navWrap.scrollWidth)
+      + (this.brand ? this.brand.offsetWidth : 150)
+      + (btn ? btn.offsetWidth : 94) + 76 + 42;
+    const wide = this.topbar.clientWidth >= need;
+    if (wide !== this.navWide) {
+      this.navWide = wide;
+      this.navWrap.style.display = wide ? 'block' : 'none';
+      if (this.navMini) this.navMini.style.display = wide ? 'none' : 'flex';
+    }
+    return wide;
+  }
+
+  drawNav(dt) {
+    if (!this.navBase || !this.navItems.length) return;
+    if (!this.fitNav() || !this.navWrap.offsetWidth) return;
+    const base = this.rects();
+    if (!base.length || !base[0].height) return;
+
+    const isOpen = i => i === this.hovered || i === this.active;
+    // A gap opens once however many of its two pills are involved, on a spring
+    // (stiffness 260, damping 30) — the same feel as the source component.
+    if (!this.vel || this.vel.length !== base.length - 1) this.vel = new Array(base.length - 1).fill(0);
+    const step = Math.min(dt, 33) / 1000;
+    for (let i = 0; i < base.length - 1; i++) {
+      const t = isOpen(i) || isOpen(i + 1) ? 1 : 0;
+      const x = this.open[i] || 0;
+      const v = this.vel[i] || 0;
+      if (Math.abs(x - t) < 0.002 && Math.abs(v) < 0.02) { this.open[i] = t; this.vel[i] = 0; continue; }
+      const a = -260 * (x - t) - 30 * v;
+      this.vel[i] = v + a * step;
+      this.open[i] = x + this.vel[i] * step;
+    }
+
+    const xs = [base[0].x];
+    for (let i = 1; i < base.length; i++) {
+      xs[i] = xs[i - 1] + base[i - 1].width + (base[i].x - (base[i - 1].x + base[i - 1].width)) + this.push * (this.open[i - 1] || 0);
+    }
+    // Anchored on the row's ink, not its bounding box: pills differ in width and
+    // the extra room appears at one gap, so holding the box still lets the
+    // weight drift inside it.
+    const balance = arr => {
+      let moment = 0, total = 0;
+      for (let i = 0; i < base.length; i++) {
+        moment += (arr[i] + base[i].width / 2) * base[i].width;
+        total += base[i].width;
+      }
+      return total > 0 ? moment / total : 0;
+    };
+    const offset = balance(base.map(r => r.x)) - balance(xs);
+    const shaped = base.map((r, i) => ({ ...r, x: xs[i] + offset }));
+    const h = shaped[0].height;
+    const radius = h / 2;
+
+    // One path for pills AND waists: each waist tucks its ends inside the pills
+    // it joins, and separate elements paint those overlaps twice — invisible
+    // under an opaque fill, but a bright seam under the translucent halo.
+    const parts = shaped.map(r => pillPath(r, radius));
+    for (let i = 0; i < shaped.length - 1; i++) {
+      const d = waistPath(shaped[i], shaped[i + 1], radius, h * 0.4, this.open[i] || 0);
+      if (d) parts.push(d);
+    }
+    const data = parts.join(' ');
+    this.navBase.setAttribute('d', data);
+    if (this.navHalo) {
+      this.navHalo.setAttribute('d', data);
+      this.navHalo.style.opacity = this.pointerIn ? '1' : '0';
+    }
+    this.navItems.forEach((el, i) => {
+      el.style.transform = 'translateX(' + (shaped[i].x - base[i].x).toFixed(2) + 'px)';
+      const dot = el.querySelector('[data-dot]');
+      if (dot) dot.style.opacity = i === this.active ? '1' : '0';
+      el.style.color = i === this.active || i === this.hovered ? '#ffffff' : 'rgba(255,255,255,0.78)';
+    });
+  }
+
+  tick(now) {
+    const t = now || performance.now();
+    const dt = Math.min(64, t - this.last);
+    this.last = t;
+    // Any node can be swapped out by a direct edit or a re-render, so the whole
+    // cache is re-read whenever a representative of it goes stale.
+    if (!this.navBase || !this.navBase.isConnected || !this.bulb || !this.bulb.isConnected) this.collect();
+
+    this.smooth += (this.target - this.smooth) * (1 - Math.pow(0.014, dt / 1000));
+    const s = this.smooth;
+
+    if (this.bulb && this.bulbRail) {
+      const span = this.bulbRail.clientHeight - 24;
+      const y = s * span;
+      this.bulb.style.transform = 'translate3d(0,' + y.toFixed(1) + 'px,0)';
+      this.history.unshift(y);
+      if (this.history.length > 240) this.history.pop();
+      if (Math.abs(this.target - s) > 0.0003) this.trailSeen = t;
+      const lingering = t - (this.trailSeen || 0) < 900;
+      this.trail.forEach((el, i) => {
+        const h = this.history[Math.min(this.history.length - 1, 14 + i * 18)];
+        if (h == null) return;
+        el.style.transform = 'translate3d(0,' + (h + 6).toFixed(1) + 'px,0)';
+        el.style.opacity = (lingering ? (1 - i / (this.trail.length + 1)) * 0.75 : 0).toFixed(3);
+        el.style.transition = 'opacity 900ms ease';
+      });
+    }
+
+    if (this.topbar) {
+      const on = window.scrollY > 60;
+      this.topbar.style.transition = 'background-color 400ms ease, border-color 400ms ease';
+      this.topbar.style.borderBottom = '1px solid ' + (on ? 'rgba(255,255,255,0.10)' : 'rgba(255,255,255,0)');
+      this.topbar.style.backgroundColor = on ? 'rgba(5,6,9,0.6)' : 'rgba(5,6,9,0)';
+      this.topbar.style.backdropFilter = on ? 'blur(16px)' : 'none';
+    }
+
+    this.readSection();
+    this.drawNav(dt);
+    this._raf = requestAnimationFrame(t2 => this.tick(t2));
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    if (this._wake) {
+      document.removeEventListener('visibilitychange', this._wake);
+      window.removeEventListener('focus', this._wake);
+    }
+    if (this._esc) window.removeEventListener('keydown', this._esc);
+    document.removeEventListener('mousemove', this._pointer);
+    window.removeEventListener('scroll', this._read);
+    window.removeEventListener('resize', this._read);
+    document.documentElement.style.overflow = '';
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "_source": "Lifted from current makemindsrobotics.org/programs — copy tightened. Confirm before launch.",
+  "programs": [
+    {
+      "id": "outreach",
+      "code": "OUTREACH",
+      "name": "Community + outreach",
+      "ages": "all ages",
+      "headline": "STEM demos, school visits, library workshops, and a summer build camp.",
+      "body": "Robotics is a means, not the end. We run free demos at Edison Public Library, partner with local elementary schools on STEM days, and host an eight-week summer camp where middle-schoolers learn CAD and Java from our team members.",
+      "metrics": [
+        { "label": "Students reached / yr", "value": "300+" },
+        { "label": "Library demos", "value": "06" }
+      ],
+      "__placeholder": true
+    },
+    {
+      "id": "fll",
+      "code": "FLL",
+      "name": "FIRST LEGO League",
+      "ages": "9-14",
+      "headline": "Mentoring younger teams. Mission planning. LEGO SPIKE Prime. Annual challenge themes.",
+      "body": "We mentor two FLL teams of younger Edison students. Beyond robot building, FLL emphasizes a research project tied to the season's real-world theme — and our high-schoolers run the design-thinking workshops.",
+      "metrics": [
+        { "label": "Teams mentored", "value": "02" },
+        { "label": "Workshops / year", "value": "12" }
+      ]
+    },
+    {
+      "id": "ftc",
+      "code": "FTC",
+      "name": "FIRST Tech Challenge",
+      "ages": "12-18",
+      "headline": "Our flagship competition. Design, build, code a robot. Compete from regionals to worlds.",
+      "body": "Team 23786 has competed in FTC since 2023 — three full seasons across CENTERSTAGE, INTO THE DEEP, and DECODE. We design with CAD, fabricate with hand tools and 3D printers, and code our control systems in OnBot Java and Android Studio.",
+      "metrics": [
+        { "label": "Seasons", "value": "03" },
+        { "label": "Events", "value": "27" },
+        { "label": "Awards", "value": "08" }
+      ]
+    }
+  ]
+}

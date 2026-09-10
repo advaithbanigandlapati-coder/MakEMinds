@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#050609; scrollbar-width:none; -ms-overflow-style:none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { width:0; height:0; }
+  body { -webkit-font-smoothing:antialiased; }
+  a { color:#9cc8e8; text-decoration:none; transition:color 240ms ease; }
+  a:hover { color:#ffffff; }
+  ::selection { background:rgba(125,178,221,0.35); }
+</style>
+</helmet>
+<div style="position:relative;min-height:100vh;background:#050609;color:#ffffff;font-family:'Roboto',system-ui,sans-serif;overflow-x:clip">
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:0;background:radial-gradient(120% 80% at 85% -10%, rgba(125,178,221,0.16) 0%, rgba(5,6,9,0) 58%)"></div>
+
+  <dc-import name="SiteChrome" active="notebook" hint-size="100%,64px"></dc-import>
+
+  <main style="position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:118px 22px 60px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:34px;align-items:end;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,0.14)">
+      <div style="min-width:0">
+        <h1 style="margin:20px 0 0;font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line-height:0.95;letter-spacing:-0.03em">Build log,<br>in the open.</h1>
+        <p style="margin:22px 0 0;max-width:52ch;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.75)">Design reviews, tuning sessions, and the decisions we got wrong first. The engineering portfolio lives here, not in a binder nobody reads.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:20px;min-width:0">
+        <div><p style="margin:0;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:0.9">05</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Entries</p></div>
+        <div><p style="margin:0;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:0.9;color:#7db2dd">08</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Build seasons</p></div>
+      </div>
+    </div>
+
+    <section style="margin-top:40px;display:flex;flex-direction:column;gap:14px">
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px;padding:26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05);transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.55);transform:translateY(-3px)">
+        <div style="min-width:0">
+          <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.55)">12 April 2026</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:14px">
+          </div>
+        </div>
+        <div style="grid-column:span 2;min-width:0">
+          <h2 style="margin:0;font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:600;line-height:1.2">AprilTag pose fusion for DECODE auto</h2>
+          <p style="margin:12px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72)">How we fused Limelight 3A AprilTag estimates with wheel odometry to ship a 4-routine autonomous in 9 days.</p>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px;padding:26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05);transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.55);transform:translateY(-3px)">
+        <div style="min-width:0">
+          <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.55)">28 February 2026</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:14px">
+          </div>
+        </div>
+        <div style="grid-column:span 2;min-width:0">
+          <h2 style="margin:0;font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:600;line-height:1.2">Why we ripped out the v1 chassis after states</h2>
+          <p style="margin:12px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72)">Tipping under defense told us the v1 chassis was wrong. Here's what the v2 changes and why.</p>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px;padding:26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05);transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.55);transform:translateY(-3px)">
+        <div style="min-width:0">
+          <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.55)">18 January 2026</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:14px">
+          </div>
+        </div>
+        <div style="grid-column:span 2;min-width:0">
+          <h2 style="margin:0;font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:600;line-height:1.2">Tuning the lift PID, in three iterations</h2>
+          <p style="margin:12px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72)">How we went from "overshoots every preset, hits the hardstops" to "settles in 220ms with no oscillation" — three tuning sessions, no math required.</p>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px;padding:26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05);transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.55);transform:translateY(-3px)">
+        <div style="min-width:0">
+          <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.55)">4 November 2025</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:14px">
+          </div>
+        </div>
+        <div style="grid-column:span 2;min-width:0">
+          <h2 style="margin:0;font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:600;line-height:1.2">How we run a design review without it turning into a free-for-all</h2>
+          <p style="margin:12px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72)">Three rules that keep our DRs short, decisive, and not personal.</p>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px;padding:26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05);transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.55);transform:translateY(-3px)">
+        <div style="min-width:0">
+          <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.55)">29 August 2025</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:14px">
+          </div>
+        </div>
+        <div style="grid-column:span 2;min-width:0">
+          <h2 style="margin:0;font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:600;line-height:1.2">Summer build camp · what worked, what didn't</h2>
+          <p style="margin:12px 0 0;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.72)">18 middle schoolers, 8 weeks, $0 budget. Here's what we'd repeat and what we'd cut.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer style="position:relative;z-index:10;padding:0 22px 40px">
+    <div style="display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding-top:26px;border-top:1px solid rgba(255,255,255,0.14)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="assets/makeminds-mark.png" alt="" style="width:30px;height:30px;object-fit:contain;display:block">
+        <div>
+          <p style="margin:0;font-size:15px;font-weight:600">MakEMinds Robotics</p>
+          <p style="margin:5px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">FTC 23786 · Edison, NJ · © 2026</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;font-family:'Montserrat',sans-serif;font-size:14px">
+        <a href="mailto:info@makemindsrobotics.org">info@makemindsrobotics.org</a>
+        <a href="https://ftc-events.firstinspires.org/team/23786" target="_blank" rel="noopener noreferrer">ftc-events</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

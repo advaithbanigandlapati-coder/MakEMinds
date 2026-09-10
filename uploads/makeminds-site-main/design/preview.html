@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MakEMinds — design preview</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Palette: sampled from logo SVG */
+      --bg:         #050506;
+      --bg-elev:    #0E1116;
+      --bg-elev-2:  #131822;
+      --fg:         #E8EEF4;
+      --fg-muted:   #8090A4;
+      --fg-dim:     #555c65;
+      --border:     #1A2028;
+      --accent:     #649dc7;
+      --accent-hi:  #ccd9e6;
+      --accent-dim: #2E5878;
+      --warn:       #FF6B35;
+
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+      --font-mono:    'Geist Mono', ui-monospace, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--bg); color: var(--fg); }
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.55;
+      padding: 64px 48px 120px;
+      max-width: 1280px;
+      margin: 0 auto;
+      background-image:
+        radial-gradient(circle at 50% -10%, rgba(100,157,199,0.05), transparent 60%),
+        repeating-linear-gradient(0deg, rgba(204,217,230,0.012) 0 1px, transparent 1px 3px);
+    }
+
+    .mono { font-family: var(--font-mono); }
+
+    .marker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 12px;
+    }
+    .marker .accent { color: var(--accent); }
+
+    h1.page-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(48px, 7vw, 96px);
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      color: var(--fg-muted);
+      max-width: 64ch;
+      margin-bottom: 56px;
+      font-size: 17px;
+    }
+
+    section {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      margin-top: 80px;
+    }
+    section > h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 36px;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    /* ===== LOGO LAB ===== */
+    .logo-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .logo-card {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      padding: 32px;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;   /* << vertical centering — fix for card alignment */
+      gap: 20px;
+    }
+    .logo-card.dark   { background: #000; }
+    .logo-card.elev   { background: var(--bg-elev); }
+    .logo-card.deep   { background: var(--bg-elev-2); }
+    .logo-card svg, .logo-card img, .logo-card object { display: block; }
+    .logo-card .caption {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--fg-muted);
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .logo-card .fav-strip {
+      display: flex;
+      align-items: end;
+      gap: 16px;
+    }
+
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 16px;
+    }
+    .compare > div {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      padding: 40px;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .compare img, .compare object { max-width: 280px; height: auto; display: block; }
+
+    /* ===== TYPOGRAPHY LOCKUP ===== */
+    .type-card {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      padding: 48px;
+      margin-top: 16px;
+    }
+    .type-card .display {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(64px, 9vw, 128px);
+      letter-spacing: -0.03em;
+      line-height: 0.9;
+    }
+    .type-card .display em {
+      font-style: normal;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .type-card .sub {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 28px;
+      letter-spacing: -0.01em;
+      color: var(--fg-muted);
+      margin-top: 16px;
+    }
+    .type-card .meta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-top: 32px;
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .type-card .meta strong { color: var(--accent); font-weight: 500; }
+    .type-card .body-sample {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--fg-muted);
+      max-width: 64ch;
+      margin-top: 28px;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+    .type-card .body-sample strong { color: var(--fg); font-weight: 700; }
+
+    .type-stack {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 32px;
+      align-items: start;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      margin-top: 28px;
+    }
+    .type-stack .label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      line-height: 1.6;
+    }
+    .type-stack .label b { color: var(--fg); display: block; font-weight: 700; }
+    .ts-h2  { font-family: var(--font-display); font-weight: 700; font-size: 44px; letter-spacing: -0.02em; line-height: 1; }
+    .ts-h3  { font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: -0.01em; }
+    .ts-body{ font-family: var(--font-body); font-weight: 400; font-size: 16px; line-height: 1.6; color: var(--fg-muted); }
+    .ts-mono{ font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); }
+
+    /* ===== CONTACT ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      margin-top: 24px;
+    }
+    @media (max-width: 880px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .contact-left h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(40px, 5vw, 64px);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+    .contact-left p { color: var(--fg-muted); max-width: 38ch; margin-bottom: 32px; }
+
+    .channels { border-top: 1px solid var(--border); }
+    .channel {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      text-decoration: none;
+      color: var(--fg);
+      transition: padding-left 220ms ease, background 220ms ease;
+    }
+    .channel:hover { padding-left: 16px; background: linear-gradient(90deg, rgba(100,157,199,0.08), transparent 70%); }
+    .channel .key {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+    }
+    .channel .val {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+    .channel .arrow {
+      font-family: var(--font-mono);
+      color: var(--fg-dim);
+      transition: color 220ms ease, transform 220ms ease;
+    }
+    .channel:hover .arrow { color: var(--accent); transform: translateX(4px); }
+
+    .contact-form {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      padding: 40px;
+    }
+    .contact-form .form-marker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 24px;
+    }
+    .field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .field label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+    }
+    .field input, .field select, .field textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 0;
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--fg);
+      outline: none;
+      transition: border-color 200ms ease;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus { border-bottom-color: var(--accent); }
+    .field textarea { resize: vertical; min-height: 80px; }
+
+    .submit-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .submit-row .mailto-fallback { font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted); }
+    .submit-row .mailto-fallback a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+    .submit-row .mailto-fallback a:hover { border-bottom-color: var(--accent); }
+
+    button.send {
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      padding: 14px 28px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+    button.send:hover { transform: translateY(-1px); background: var(--accent-hi); }
+
+    /* ===== EVENTS MARQUEE ===== */
+    .marquee-wrap {
+      margin-top: 24px;
+      position: relative;
+      width: calc(100% + 96px);
+      margin-left: -48px;
+      overflow-x: auto;            /* << allow manual horizontal scroll */
+      overflow-y: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0;
+      background: var(--bg);
+      cursor: grab;                /* << hint that it's draggable */
+      scrollbar-width: none;       /* Firefox */
+      -ms-overflow-style: none;    /* IE/Edge legacy */
+    }
+    .marquee-wrap::-webkit-scrollbar { display: none; }
+    .marquee-wrap.dragging { cursor: grabbing; user-select: none; }
+    .marquee-wrap::before,
+    .marquee-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 140px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .marquee-wrap::before { left: 0;  background: linear-gradient(90deg,  var(--bg), transparent); }
+    .marquee-wrap::after  { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
+
+    .marquee {
+      display: flex;
+      align-items: center;             /* << belt-and-braces vertical centering */
+      width: max-content;
+      gap: 0;
+      animation: marquee-slide 220s linear infinite;  /* << slowed from 120s → 220s */
+    }
+    .marquee-wrap:hover .marquee,
+    .marquee-wrap.user-controlling .marquee { animation-play-state: paused; }
+
+    @keyframes marquee-slide {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .m-item {
+      display: inline-flex;
+      align-items: center;             /* << every chip vertically centered, same level */
+      gap: 18px;
+      padding: 0 32px;
+      height: 64px;                    /* << fixed height = uniform baseline across all chips */
+      border-left: 1px solid var(--border);
+      white-space: nowrap;
+      position: relative;
+      transition: background 200ms ease;
+    }
+    .m-item:last-child { border-right: 1px solid var(--border); }
+
+    /* Uniform text styling across all chips, award or not.
+       Distinction is carried by the left-border color only. */
+    .m-item .yr {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--accent);          /* season tag stays accent-blue on every chip */
+      text-transform: uppercase;
+    }
+    .m-item .nm {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      line-height: 1;                  /* prevents tall display-font line-box from offsetting center */
+    }
+    .m-item .re {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--fg-muted);
+      text-transform: uppercase;
+    }
+
+    /* Award chips: distinguished only by a brighter, thicker left border + a small accent pip. */
+    .m-item.award {
+      border-left: 2px solid var(--accent);
+    }
+    .m-item.award::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      flex-shrink: 0;
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee { animation: none; transform: translateX(0); }
+    }
+
+    .marquee-hint {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fg-dim);
+      margin-top: 12px;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .marquee-hint span::before { content: '› '; color: var(--accent); }
+
+    /* ===== AWARDS GRID ===== */
+    .awards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .award {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;    /* << consistent vertical distribution */
+      gap: 24px;
+      min-height: 180px;
+      transition: border-color 200ms ease, background 200ms ease;
+    }
+    .award:hover { border-color: var(--accent-dim); background: var(--bg-elev-2); }
+    .award .yr { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; }
+    .award .nm { font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: -0.01em; line-height: 1.2; color: var(--fg); }
+    .award .ev { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-muted); }
+  </style>
+</head>
+<body>
+  <div class="marker">[ 00 ] <span class="accent">·</span> MAKEMINDS · DESIGN PREVIEW · 2026-05-22 · BRAND PALETTE LIVE</div>
+  <h1 class="page-title">On-brand.</h1>
+  <p class="subtitle">Palette pulled straight from the logo SVG (<span class="mono" style="color: var(--accent);">#649dc7</span> steel-blue is the new primary, <span class="mono" style="color: var(--accent-hi);">#ccd9e6</span> for highlights). Marquee slowed to 220s, drag or trackpad-scroll to control manually. All card alignment normalized.</p>
+
+  <!-- ===== LOGO ===== -->
+  <section>
+    <div class="marker">[ 01 ] <span class="accent">·</span> LOGO</div>
+    <h2>Brand mark — three contexts</h2>
+
+    <div class="logo-row">
+      <div class="logo-card dark">
+        <object data="../public/logo-mark.svg" type="image/svg+xml" style="width: 220px; height: 220px;"></object>
+        <div class="caption">SVG · on pure #000</div>
+      </div>
+      <div class="logo-card elev">
+        <object data="../public/logo-mark.svg" type="image/svg+xml" style="width: 220px; height: 220px;"></object>
+        <div class="caption">SVG · on --bg-elev</div>
+      </div>
+      <div class="logo-card deep">
+        <div class="fav-strip">
+          <object data="../public/logo-mark.svg" type="image/svg+xml" style="width: 96px; height: 96px;"></object>
+          <object data="../public/logo-mark.svg" type="image/svg+xml" style="width: 48px; height: 48px;"></object>
+          <object data="../public/logo-mark.svg" type="image/svg+xml" style="width: 24px; height: 24px;"></object>
+          <object data="../public/logo-mark.svg" type="image/svg+xml" style="width: 16px; height: 16px;"></object>
+        </div>
+        <div class="caption">96 / 48 / 24 / 16 px · favicon test</div>
+      </div>
+    </div>
+
+    <div class="marker" style="margin-top: 32px;">SVG vs ORIGINAL PNG</div>
+    <div class="compare">
+      <div>
+        <object data="../public/logo-mark.svg" type="image/svg+xml" style="width: 280px; height: 280px;"></object>
+        <div class="caption mono">SVG · traced · scales infinitely</div>
+      </div>
+      <div>
+        <img src="../public/logo-full.png" alt="Original MakEMinds logo">
+        <div class="caption mono">PNG · keep as fallback / print</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TYPOGRAPHY ===== -->
+  <section>
+    <div class="marker">[ 02 ] <span class="accent">·</span> TYPE · LOCKED</div>
+    <h2>Space Grotesk + DM Sans + Geist Mono</h2>
+
+    <div class="type-card">
+      <div class="display">MakEMinds<br><em>Robotics</em></div>
+      <div class="sub">A community building robots, mentors, and a new generation of engineers.</div>
+      <div class="meta">
+        <span>FTC TEAM <strong>23786</strong></span>
+        <span>EDISON, NJ</span>
+        <span>ROOKIE <strong>2023</strong></span>
+        <span><strong>27</strong> EVENTS · <strong>8</strong> AWARDS</span>
+      </div>
+      <div class="body-sample">
+        Body copy is set in <strong>DM Sans</strong>. Neutral, modern, designed for screens — pairs cleanly with Space Grotesk without competing for attention. Mono captions stay in Geist Mono for that structural-not-decorative feel.
+      </div>
+
+      <div class="type-stack">
+        <div class="label"><b>SPACE GROTESK 700</b>Display · H1 · H2</div>
+        <div class="ts-h2">Engineering Notebook</div>
+      </div>
+      <div class="type-stack">
+        <div class="label"><b>SPACE GROTESK 600</b>H3 · subhead</div>
+        <div class="ts-h3">2025–26 robot — DECODE season</div>
+      </div>
+      <div class="type-stack">
+        <div class="label"><b>DM SANS 400</b>Body</div>
+        <div class="ts-body">Our 2025 robot was built for the DECODE game piece flow. Custom intake, dual-stage extension, vision-guided alignment. The kinematics chain is documented in the build log alongside every design iteration we tested.</div>
+      </div>
+      <div class="type-stack">
+        <div class="label"><b>GEIST MONO 500</b>Caption · metadata</div>
+        <div class="ts-mono">[ 03 / 12 ] · CHASSIS · 14.2 KG · OPR 87.4</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section>
+    <div class="marker">[ 03 ] <span class="accent">·</span> CONTACT · APPROVED</div>
+    <h2>Two-column contact pattern</h2>
+    <p style="color: var(--fg-muted); max-width: 60ch; margin-bottom: 32px;">Left: hardcoded direct-contact links. Right: the form posting to <code class="mono" style="color: var(--accent);">/api/contact</code> via Resend, with a <code class="mono" style="color: var(--accent);">mailto:</code> fallback below submit so it always works.</p>
+
+    <div class="contact-grid">
+      <div class="contact-left">
+        <h3>Send a signal.</h3>
+        <p>Sponsorship, judging, partnerships, or just curious about FIRST in central Jersey — pick the channel that fits.</p>
+
+        <div class="channels">
+          <a class="channel" href="mailto:info@makemindsrobotics.org">
+            <span class="key">01 / EMAIL</span>
+            <span class="val">info@makemindsrobotics.org</span>
+            <span class="arrow">→</span>
+          </a>
+          <a class="channel" href="https://instagram.com/makemindsrobotics" target="_blank" rel="noopener">
+            <span class="key">02 / INSTAGRAM</span>
+            <span class="val">@makemindsrobotics</span>
+            <span class="arrow">↗</span>
+          </a>
+          <a class="channel" href="#" target="_blank" rel="noopener">
+            <span class="key">03 / YOUTUBE</span>
+            <span class="val">MakEMinds Robotics</span>
+            <span class="arrow">↗</span>
+          </a>
+          <a class="channel" href="#">
+            <span class="key">04 / LOCATION</span>
+            <span class="val">Edison, NJ — USA</span>
+            <span class="arrow">·</span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('In the real build this hits /api/contact via Resend.');">
+        <div class="form-marker">[ MESSAGE FORM ] · POST /api/contact</div>
+
+        <div class="field">
+          <label for="name">YOUR NAME</label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+        </div>
+
+        <div class="field">
+          <label for="email">EMAIL ADDRESS</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label for="reason">REASON FOR REACHING OUT</label>
+          <select id="reason" name="reason" required>
+            <option value="">— select —</option>
+            <option>Sponsorship inquiry</option>
+            <option>Mentor / coach interest</option>
+            <option>Partnership / collaboration</option>
+            <option>Outreach event request</option>
+            <option>Judging / scouting question</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="msg">MESSAGE</label>
+          <textarea id="msg" name="msg" rows="4" required></textarea>
+        </div>
+
+        <div class="submit-row">
+          <span class="mailto-fallback">or email us direct: <a href="mailto:info@makemindsrobotics.org">info@makemindsrobotics.org</a></span>
+          <button class="send" type="submit">TRANSMIT →</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== EVENTS MARQUEE ===== -->
+  <section>
+    <div class="marker">[ 04 ] <span class="accent">·</span> EVENTS · 27 TOTAL · 3 SEASONS</div>
+    <h2>Events marquee</h2>
+    <p style="color: var(--fg-muted); max-width: 60ch; margin-bottom: 8px;">All 27 events, right-to-left at 220s loop. Every chip is exactly 64px tall — award events are marked by an accent-blue left border + glow pip, not by changing text size or weight.</p>
+
+    <div class="marquee-hint">
+      <span>hover to pause</span>
+      <span>drag or swipe to scrub</span>
+      <span>shift + scroll wheel = horizontal</span>
+      <span><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent); margin-right:6px; transform: translateY(-1px);"></span>= award event</span>
+    </div>
+
+    <div class="marquee-wrap" id="marqueeWrap">
+      <div class="marquee" id="marquee">
+        <div class="m-item"><span class="yr">2025 · DECODE</span><span class="nm">Central Practice Day</span><span class="re">PRACTICE</span></div>
+        <div class="m-item"><span class="yr">2025 · DECODE</span><span class="nm">P1-6 PM Upper Central League Meet</span><span class="re">LEAGUE MEET</span></div>
+        <div class="m-item"><span class="yr">2025 · DECODE</span><span class="nm">P2-7 Upper Central League Meet</span><span class="re">LEAGUE MEET</span></div>
+        <div class="m-item"><span class="yr">2025 · DECODE</span><span class="nm">P3-5 Upper Central League Meet</span><span class="re">LEAGUE MEET</span></div>
+        <div class="m-item award"><span class="yr">2025 · DECODE</span><span class="nm">Central Conference Upper Central League Tournament</span><span class="re">INSPIRE AWARD · 2ND</span></div>
+        <div class="m-item"><span class="yr">2025 · DECODE</span><span class="nm">United States Governors Cup</span><span class="re">COMPETED</span></div>
+        <div class="m-item award"><span class="yr">2025 · DECODE</span><span class="nm">New Jersey Championship</span><span class="re">FINALIST · PARKWAY WINNER</span></div>
+        <div class="m-item"><span class="yr">2025 · DECODE</span><span class="nm">NJ Championship — Parkway Division</span><span class="re">DIVISION</span></div>
+        <div class="m-item"><span class="yr">2025 · DECODE</span><span class="nm">FIRST Championship — Ross Division</span><span class="re">WORLDS</span></div>
+        <div class="m-item"><span class="yr">2025 · DECODE</span><span class="nm">FIRST Championship</span><span class="re">WORLDS</span></div>
+        <div class="m-item"><span class="yr">2024 · INTO THE DEEP</span><span class="nm">P1 Upper Central League Meet</span><span class="re">LEAGUE MEET</span></div>
+        <div class="m-item"><span class="yr">2024 · INTO THE DEEP</span><span class="nm">P2 Upper Central League Meet</span><span class="re">LEAGUE MEET</span></div>
+        <div class="m-item"><span class="yr">2024 · INTO THE DEEP</span><span class="nm">NJ Remote Practice Judging</span><span class="re">PRACTICE</span></div>
+        <div class="m-item"><span class="yr">2024 · INTO THE DEEP</span><span class="nm">P3 Upper Central League Meet</span><span class="re">LEAGUE MEET</span></div>
+        <div class="m-item award"><span class="yr">2024 · INTO THE DEEP</span><span class="nm">Central Conference Upper Central League Tournament</span><span class="re">INSPIRE 3RD · THINK</span></div>
+        <div class="m-item award"><span class="yr">2024 · INTO THE DEEP</span><span class="nm">New Jersey Championship</span><span class="re">CONTROL · TURNPIKE FINALIST</span></div>
+        <div class="m-item"><span class="yr">2024 · INTO THE DEEP</span><span class="nm">NJ Championship — Turnpike Division</span><span class="re">DIVISION</span></div>
+        <div class="m-item"><span class="yr">2024 · INTO THE DEEP</span><span class="nm">Michiana Premier Event — Thomson Division</span><span class="re">OFF-SEASON</span></div>
+        <div class="m-item"><span class="yr">2024 · INTO THE DEEP</span><span class="nm">Michiana Premier Event</span><span class="re">OFF-SEASON</span></div>
+        <div class="m-item"><span class="yr">2023 · CENTERSTAGE</span><span class="nm">P1 AM Upper Central League Meet</span><span class="re">LEAGUE MEET</span></div>
+        <div class="m-item"><span class="yr">2023 · CENTERSTAGE</span><span class="nm">P1 Upper Central League Meet</span><span class="re">LEAGUE MEET</span></div>
+        <div class="m-item"><span class="yr">2023 · CENTERSTAGE</span><span class="nm">P2 AM Upper Central League Meet</span><span class="re">LEAGUE MEET</span></div>
+        <div class="m-item"><span class="yr">2023 · CENTERSTAGE</span><span class="nm">P2 Upper Central League Meet</span><span class="re">LEAGUE MEET</span></div>
+        <div class="m-item"><span class="yr">2023 · CENTERSTAGE</span><span class="nm">P3 Upper Central League Meet</span><span class="re">LEAGUE MEET</span></div>
+        <div class="m-item award"><span class="yr">2023 · CENTERSTAGE</span><span class="nm">Central Conference Tournament</span><span class="re">FINALIST · 1ST PICK</span></div>
+        <div class="m-item"><span class="yr">2023 · CENTERSTAGE</span><span class="nm">NJ State Championship — Turnpike Division</span><span class="re">DIVISION</span></div>
+        <div class="m-item"><span class="yr">2023 · CENTERSTAGE</span><span class="nm">NJ State Championship</span><span class="re">STATE</span></div>
+      </div>
+    </div>
+
+    <!-- Major awards -->
+    <h2 style="margin-top: 64px;">Major awards</h2>
+    <div class="awards">
+      <div class="award">
+        <div class="yr">2025 · DECODE</div>
+        <div class="nm">Inspire Award · 2nd Place</div>
+        <div class="ev">Central Conference Upper Central League Tournament</div>
+      </div>
+      <div class="award">
+        <div class="yr">2025 · DECODE</div>
+        <div class="nm">Finalist Alliance Captain</div>
+        <div class="ev">New Jersey Championship</div>
+      </div>
+      <div class="award">
+        <div class="yr">2025 · DECODE</div>
+        <div class="nm">Parkway Division Winning Alliance Captain</div>
+        <div class="ev">New Jersey Championship</div>
+      </div>
+      <div class="award">
+        <div class="yr">2024 · INTO THE DEEP</div>
+        <div class="nm">Inspire Award · 3rd Place</div>
+        <div class="ev">Central Conference Upper Central League Tournament</div>
+      </div>
+      <div class="award">
+        <div class="yr">2024 · INTO THE DEEP</div>
+        <div class="nm">Think Award</div>
+        <div class="ev">Central Conference Upper Central League Tournament</div>
+      </div>
+      <div class="award">
+        <div class="yr">2024 · INTO THE DEEP</div>
+        <div class="nm">Control Award</div>
+        <div class="ev">New Jersey Championship</div>
+      </div>
+      <div class="award">
+        <div class="yr">2024 · INTO THE DEEP</div>
+        <div class="nm">Turnpike Division Finalist Alliance Captain</div>
+        <div class="ev">New Jersey Championship</div>
+      </div>
+      <div class="award">
+        <div class="yr">2023 · CENTERSTAGE</div>
+        <div class="nm">Finalist Alliance · 1st Team Selected</div>
+        <div class="ev">Central Conference Tournament</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    /*
+     * Marquee enhancements:
+     *  1. Duplicate children for seamless -50% loop.
+     *  2. Pointer drag-to-scrub (mouse + touch).
+     *  3. While user is interacting, animation stays paused; when they
+     *     release and the cursor leaves the strip, animation resumes
+     *     from its current visual position.
+     */
+    (function () {
+      const wrap = document.getElementById('marqueeWrap');
+      const track = document.getElementById('marquee');
+      if (!wrap || !track) return;
+
+      // 1) duplicate for seamless loop
+      track.innerHTML = track.innerHTML + track.innerHTML;
+
+      // 2) drag-to-scrub
+      let isDown = false;
+      let startX = 0;
+      let startScroll = 0;
+
+      const start = (clientX) => {
+        isDown = true;
+        startX = clientX;
+        startScroll = wrap.scrollLeft;
+        wrap.classList.add('dragging', 'user-controlling');
+      };
+      const move = (clientX) => {
+        if (!isDown) return;
+        const dx = clientX - startX;
+        wrap.scrollLeft = startScroll - dx;
+      };
+      const end = () => {
+        isDown = false;
+        wrap.classList.remove('dragging');
+        // keep user-controlling until pointer actually leaves the strip
+      };
+
+      wrap.addEventListener('mousedown', (e) => start(e.clientX));
+      window.addEventListener('mousemove', (e) => move(e.clientX));
+      window.addEventListener('mouseup', end);
+
+      wrap.addEventListener('touchstart', (e) => start(e.touches[0].clientX), { passive: true });
+      wrap.addEventListener('touchmove',  (e) => move(e.touches[0].clientX),  { passive: true });
+      wrap.addEventListener('touchend',   end);
+
+      wrap.addEventListener('mouseleave', () => {
+        wrap.classList.remove('user-controlling');
+      });
+
+      // 3) horizontal scroll-wheel support (shift + wheel, or trackpad horizontal)
+      wrap.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+          // trackpad horizontal — native scroll handles it; just pause animation
+          wrap.classList.add('user-controlling');
+          clearTimeout(wrap._wheelTimer);
+          wrap._wheelTimer = setTimeout(() => wrap.classList.remove('user-controlling'), 600);
+        }
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>

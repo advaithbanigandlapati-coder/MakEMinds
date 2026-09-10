@@ -1,0 +1,53 @@
+{
+  "_source": "Scraped from FTC-Events.firstinspires.org on 2026-05-22. Verify before launch.",
+  "team": {
+    "number": 23786,
+    "name": "MakEMinds",
+    "city": "Edison",
+    "state": "NJ",
+    "country": "USA",
+    "rookieYear": 2023,
+    "eventsCompeted": 27
+  },
+  "events": [
+    { "season": "DECODE", "year": 2025, "name": "Central Practice Day", "result": "Practice" },
+    { "season": "DECODE", "year": 2025, "name": "P1-6 PM Upper Central League Meet", "result": "League Meet" },
+    { "season": "DECODE", "year": 2025, "name": "P2-7 Upper Central League Meet", "result": "League Meet" },
+    { "season": "DECODE", "year": 2025, "name": "P3-5 Upper Central League Meet", "result": "League Meet" },
+    { "season": "DECODE", "year": 2025, "name": "Central Conference Upper Central League Tournament", "result": "Inspire Award · 2nd Place" },
+    { "season": "DECODE", "year": 2025, "name": "United States Governors Cup", "result": "Competed" },
+    { "season": "DECODE", "year": 2025, "name": "New Jersey Championship", "result": "Finalist Alliance Captain · Parkway Division Winning Alliance Captain" },
+    { "season": "DECODE", "year": 2025, "name": "New Jersey Championship — Parkway Division", "result": "Division" },
+    { "season": "DECODE", "year": 2025, "name": "FIRST Championship — Ross Division", "result": "Worlds" },
+    { "season": "DECODE", "year": 2025, "name": "FIRST Championship — FIRST Tech Challenge", "result": "Worlds" },
+
+    { "season": "INTO THE DEEP", "year": 2024, "name": "NJ 10/26/24 AM P1 Upper Central League Meet", "result": "League Meet" },
+    { "season": "INTO THE DEEP", "year": 2024, "name": "NJ 12/14/2024 P2 Upper Central League Meet", "result": "League Meet" },
+    { "season": "INTO THE DEEP", "year": 2024, "name": "NJ Remote Practice Judging 2", "result": "Practice" },
+    { "season": "INTO THE DEEP", "year": 2024, "name": "NJ 1/18/2025 P3 Upper Central League Meet", "result": "League Meet" },
+    { "season": "INTO THE DEEP", "year": 2024, "name": "Central Conference Upper Central League Tournament", "result": "Inspire Award · 3rd Place · Think Award" },
+    { "season": "INTO THE DEEP", "year": 2024, "name": "New Jersey Championship", "result": "Control Award · Turnpike Division Finalist Alliance Captain" },
+    { "season": "INTO THE DEEP", "year": 2024, "name": "New Jersey Championship — Turnpike Division", "result": "Division" },
+    { "season": "INTO THE DEEP", "year": 2024, "name": "Michiana Premier Event — Thomson Division", "result": "Off-Season" },
+    { "season": "INTO THE DEEP", "year": 2024, "name": "Michiana Premier Event", "result": "Off-Season" },
+
+    { "season": "CENTERSTAGE", "year": 2023, "name": "NJ 10/28/23 P1 AM Upper Central League Meet", "result": "League Meet" },
+    { "season": "CENTERSTAGE", "year": 2023, "name": "NJ 11/05/2023 P1 Upper Central League Meet", "result": "League Meet" },
+    { "season": "CENTERSTAGE", "year": 2023, "name": "NJ 11/19/23 P2 AM Upper Central League Meet", "result": "League Meet" },
+    { "season": "CENTERSTAGE", "year": 2023, "name": "NJ 12/9/2023 P2 Upper Central League Meet", "result": "League Meet" },
+    { "season": "CENTERSTAGE", "year": 2023, "name": "NJ 1/20/24 P3 Upper Central League Meet", "result": "League Meet" },
+    { "season": "CENTERSTAGE", "year": 2023, "name": "Central Conference Tournament", "result": "Finalist Alliance · 1st Team Selected" },
+    { "season": "CENTERSTAGE", "year": 2023, "name": "NJ State Championship — Turnpike Division", "result": "Division" },
+    { "season": "CENTERSTAGE", "year": 2023, "name": "NJ State Championship", "result": "State" }
+  ],
+  "majorAwards": [
+    { "year": 2025, "name": "Inspire Award · 2nd Place", "event": "Central Conference Upper Central League Tournament" },
+    { "year": 2025, "name": "Finalist Alliance Captain", "event": "New Jersey Championship" },
+    { "year": 2025, "name": "Parkway Division Winning Alliance Captain", "event": "New Jersey Championship" },
+    { "year": 2024, "name": "Inspire Award · 3rd Place", "event": "Central Conference Upper Central League Tournament" },
+    { "year": 2024, "name": "Think Award", "event": "Central Conference Upper Central League Tournament" },
+    { "year": 2024, "name": "Control Award", "event": "New Jersey Championship" },
+    { "year": 2024, "name": "Turnpike Division Finalist Alliance Captain", "event": "New Jersey Championship" },
+    { "year": 2023, "name": "Finalist Alliance · 1st Team Selected", "event": "Central Conference Tournament" }
+  ]
+}

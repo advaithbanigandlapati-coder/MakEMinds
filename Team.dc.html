@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#050609; scrollbar-width:none; -ms-overflow-style:none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { width:0; height:0; }
+  body { -webkit-font-smoothing:antialiased; }
+  a { color:#9cc8e8; text-decoration:none; transition:color 240ms ease; }
+  a:hover { color:#ffffff; }
+  ::selection { background:rgba(125,178,221,0.35); }
+</style>
+</helmet>
+<div style="position:relative;min-height:100vh;background:#050609;color:#ffffff;font-family:'Roboto',system-ui,sans-serif;overflow-x:clip">
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:0;background:radial-gradient(120% 80% at 82% -10%, rgba(125,178,221,0.16) 0%, rgba(5,6,9,0) 58%)"></div>
+
+  <dc-import name="SiteChrome" active="team" hint-size="100%,64px"></dc-import>
+
+  <main style="position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:118px 22px 60px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:34px;align-items:end;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,0.14)">
+      <div style="min-width:0">
+        <h1 style="margin:20px 0 0;font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line-height:0.95;letter-spacing:-0.03em">The crew<br>behind 23786.</h1>
+        <p style="margin:22px 0 0;max-width:52ch;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.75)">Students run the build, the code, the outreach, and the portfolio. Mentors keep the shop open and the sponsors talking. Everyone drives something.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:20px;min-width:0">
+        <div><p style="margin:0;font-size:clamp(2rem,4.5vw,3rem);font-weight:700;line-height:0.9">05</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Students</p></div>
+        <div><p style="margin:0;font-size:clamp(2rem,4.5vw,3rem);font-weight:700;line-height:0.9">01</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Head coach</p></div>
+        <div><p style="margin:0;font-size:clamp(2rem,4.5vw,3rem);font-weight:700;line-height:0.9;color:#7db2dd">04</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Seasons</p></div>
+      </div>
+    </div>
+
+
+    <section style="margin-top:44px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px">
+        <article style="display:flex;flex-direction:column;gap:16px;padding:22px;border:1px solid rgba(255,255,255,0.14);border-radius:16px;background:rgba(255,255,255,0.05);transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.55);transform:translateY(-4px)">
+          <div style="aspect-ratio:4/5;border-radius:10px;background:rgba(255,255,255,0.05);display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">headshot</div>
+          <div>
+            <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">Captain · Senior</p>
+            <p style="margin:10px 0 0;font-size:20px;font-weight:600;line-height:1.15">Captain Placeholder</p>
+            <p style="margin:10px 0 0;font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.7)">Founding member. Leads strategy + alliance selection. Java + CAD.</p>
+          </div>
+        </article>
+        <article style="display:flex;flex-direction:column;gap:16px;padding:22px;border:1px solid rgba(255,255,255,0.14);border-radius:16px;background:rgba(255,255,255,0.05);transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.55);transform:translateY(-4px)">
+          <div style="aspect-ratio:4/5;border-radius:10px;background:rgba(255,255,255,0.05);display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">headshot</div>
+          <div>
+            <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">Build Lead · Junior</p>
+            <p style="margin:10px 0 0;font-size:20px;font-weight:600;line-height:1.15">Build Lead Placeholder</p>
+            <p style="margin:10px 0 0;font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.7)">Owns the drivetrain. Fusion 360, CNC milling, 3D printing.</p>
+          </div>
+        </article>
+        <article style="display:flex;flex-direction:column;gap:16px;padding:22px;border:1px solid rgba(255,255,255,0.14);border-radius:16px;background:rgba(255,255,255,0.05);transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.55);transform:translateY(-4px)">
+          <div style="aspect-ratio:4/5;border-radius:10px;background:rgba(255,255,255,0.05);display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">headshot</div>
+          <div>
+            <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">Software Lead · Junior</p>
+            <p style="margin:10px 0 0;font-size:20px;font-weight:600;line-height:1.15">Software Lead Placeholder</p>
+            <p style="margin:10px 0 0;font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.7)">Vision pipeline. OpenCV, AprilTag detection, autonomous routines.</p>
+          </div>
+        </article>
+        <article style="display:flex;flex-direction:column;gap:16px;padding:22px;border:1px solid rgba(255,255,255,0.14);border-radius:16px;background:rgba(255,255,255,0.05);transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.55);transform:translateY(-4px)">
+          <div style="aspect-ratio:4/5;border-radius:10px;background:rgba(255,255,255,0.05);display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">headshot</div>
+          <div>
+            <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">Outreach Lead · Sophomore</p>
+            <p style="margin:10px 0 0;font-size:20px;font-weight:600;line-height:1.15">Outreach Lead Placeholder</p>
+            <p style="margin:10px 0 0;font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.7)">Coordinates school visits, library demos, summer camp.</p>
+          </div>
+        </article>
+        <article style="display:flex;flex-direction:column;gap:16px;padding:22px;border:1px solid rgba(255,255,255,0.14);border-radius:16px;background:rgba(255,255,255,0.05);transition:border-color 300ms ease,transform 300ms cubic-bezier(0.19,1,0.22,1)" style-hover="border-color:rgba(125,178,221,0.55);transform:translateY(-4px)">
+          <div style="aspect-ratio:4/5;border-radius:10px;background:rgba(255,255,255,0.05);display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">headshot</div>
+          <div>
+            <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">Notebook Lead · Sophomore</p>
+            <p style="margin:10px 0 0;font-size:20px;font-weight:600;line-height:1.15">Notebook Lead Placeholder</p>
+            <p style="margin:10px 0 0;font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.7)">Owns the engineering portfolio + Inspire submission.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section style="margin-top:56px">
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:26px;padding:26px;border:1px solid rgba(255,255,255,0.14);border-radius:16px;background:rgba(255,255,255,0.05)">
+        <div>
+          <p style="margin:0;font-family:'Montserrat',sans-serif;font-size:14px;color:rgba(255,255,255,0.6)">Head Coach</p>
+          <p style="margin:10px 0 0;font-size:24px;font-weight:600;line-height:1.15">Coach Placeholder</p>
+        </div>
+        <p style="margin:0;grid-column:span 2;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.75);min-width:0">Engineer. Owns the domain + sponsor relationships. Runs the shop on build nights and drives the trailer to every event.</p>
+      </article>
+    </section>
+
+    <section style="margin-top:56px;padding:34px 26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:26px;align-items:center">
+        <div style="min-width:0">
+          <p style="margin:0;font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:700;line-height:1.1;letter-spacing:-0.02em">Edison-area student?</p>
+          <p style="margin:12px 0 0;max-width:44ch;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72)">Tryouts open before each season. No robotics experience required — bring curiosity and show up.</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end;min-width:0">
+          <a href="Contact.dc.html" style="display:inline-flex;align-items:center;padding:13px 22px;border-radius:999px;background:#f2f3f5;color:#050609;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:500">Talk to us →</a>
+          <a href="Programs.dc.html" style="display:inline-flex;align-items:center;padding:13px 22px;border-radius:999px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.07);color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:500">See programs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="position:relative;z-index:10;padding:0 22px 40px">
+    <div style="display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding-top:26px;border-top:1px solid rgba(255,255,255,0.14)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="assets/makeminds-mark.png" alt="" style="width:30px;height:30px;object-fit:contain;display:block">
+        <div>
+          <p style="margin:0;font-size:15px;font-weight:600">MakEMinds Robotics</p>
+          <p style="margin:5px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">FTC 23786 · Edison, NJ · © 2026</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;font-family:'Montserrat',sans-serif;font-size:14px">
+        <a href="mailto:info@makemindsrobotics.org">info@makemindsrobotics.org</a>
+        <a href="https://ftc-events.firstinspires.org/team/23786" target="_blank" rel="noopener noreferrer">ftc-events</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

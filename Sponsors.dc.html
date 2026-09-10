@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#050609; scrollbar-width:none; -ms-overflow-style:none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { width:0; height:0; }
+  body { -webkit-font-smoothing:antialiased; }
+  a { color:#9cc8e8; text-decoration:none; transition:color 240ms ease; }
+  a:hover { color:#ffffff; }
+  ::selection { background:rgba(125,178,221,0.35); }
+</style>
+</helmet>
+<div style="position:relative;min-height:100vh;background:#050609;color:#ffffff;font-family:'Roboto',system-ui,sans-serif;overflow-x:clip">
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:0;background:radial-gradient(120% 80% at 50% -10%, rgba(125,178,221,0.16) 0%, rgba(5,6,9,0) 58%)"></div>
+
+  <dc-import name="SiteChrome" active="sponsors" hint-size="100%,64px"></dc-import>
+
+  <main style="position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:118px 22px 60px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:34px;align-items:end;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,0.14)">
+      <div style="min-width:0">
+        <h1 style="margin:20px 0 0;font-size:clamp(2.4rem,7vw,5rem);font-weight:700;line-height:0.95;letter-spacing:-0.03em">Who funds<br>the build.</h1>
+        <p style="margin:22px 0 0;max-width:52ch;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.75)">Registration, parts, travel, and the outreach we run for free. Every tier keeps a student in the shop on a Tuesday night.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:20px;min-width:0">
+        <div><p style="margin:0;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:0.9">04</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Tiers</p></div>
+        <div><p style="margin:0;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:0.9;color:#7db2dd">$25</p><p style="margin:8px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.55)">Smallest gift that helps</p></div>
+      </div>
+    </div>
+
+
+    <section style="margin-top:44px;display:flex;flex-direction:column;gap:16px">
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:26px;padding:28px 26px;border:1px solid rgba(125,178,221,0.4);border-radius:18px;background:rgba(125,178,221,0.08)">
+        <div style="min-width:0">
+          <p style="margin:14px 0 0;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.78)">Powers the entire season — robot, travel, registration.</p>
+        </div>
+        <div style="grid-column:span 2;display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-width:0">
+          <span style="display:inline-flex;align-items:center;padding:16px 22px;border:1px solid rgba(255,255,255,0.2);border-radius:12px;background:rgba(255,255,255,0.06);font-size:20px;font-weight:600">Edison Robotics Foundation</span>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:26px;padding:28px 26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05)">
+        <div style="min-width:0">
+          <p style="margin:14px 0 0;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.78)">Funds major build expenses: CAD seats, drivetrains, off-season testbeds.</p>
+        </div>
+        <div style="grid-column:span 2;display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-width:0">
+          <a href="https://www.revrobotics.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;padding:14px 20px;border:1px solid rgba(255,255,255,0.18);border-radius:12px;background:rgba(255,255,255,0.05);font-size:18px;font-weight:600;color:#fff;transition:border-color 260ms ease" style-hover="border-color:rgba(125,178,221,0.7)">REV Robotics</a>
+          <a href="https://www.gobilda.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;padding:14px 20px;border:1px solid rgba(255,255,255,0.18);border-radius:12px;background:rgba(255,255,255,0.05);font-size:18px;font-weight:600;color:#fff;transition:border-color 260ms ease" style-hover="border-color:rgba(125,178,221,0.7)">goBILDA</a>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:26px;padding:28px 26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05)">
+        <div style="min-width:0">
+          <p style="margin:14px 0 0;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.78)">Underwrites event travel, jerseys, food.</p>
+        </div>
+        <div style="grid-column:span 2;display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-width:0">
+          <span style="display:inline-flex;align-items:center;padding:14px 20px;border:1px solid rgba(255,255,255,0.18);border-radius:12px;background:rgba(255,255,255,0.05);font-size:18px;font-weight:600">Local Family A</span>
+          <span style="display:inline-flex;align-items:center;padding:14px 20px;border:1px solid rgba(255,255,255,0.18);border-radius:12px;background:rgba(255,255,255,0.05);font-size:18px;font-weight:600">Local Family B</span>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:26px;padding:28px 26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05)">
+        <div style="min-width:0">
+          <p style="margin:14px 0 0;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.78)">Every $25 helps. Workshop snacks, library outreach swag, FLL kits.</p>
+        </div>
+        <div style="grid-column:span 2;display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-width:0">
+          <span style="display:inline-flex;align-items:center;padding:14px 20px;border:1px solid rgba(255,255,255,0.18);border-radius:12px;background:rgba(255,255,255,0.05);font-size:18px;font-weight:600">Edison PTA</span>
+        </div>
+      </article>
+    </section>
+
+    <section style="margin-top:56px;padding:34px 26px;border:1px solid rgba(255,255,255,0.14);border-radius:18px;background:rgba(255,255,255,0.05)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:26px;align-items:center">
+        <div style="min-width:0">
+          <p style="margin:0;font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:700;line-height:1.1;letter-spacing:-0.02em">Back the BIOBUZZ season.</p>
+          <p style="margin:12px 0 0;max-width:46ch;font-size:15px;line-height:1.65;color:rgba(255,255,255,0.72)">Sponsors get their mark on the robot, the jerseys, and the pit banner — plus a season report on where the money went.</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end;min-width:0">
+          <a href="mailto:info@makemindsrobotics.org?subject=Sponsorship" style="display:inline-flex;align-items:center;padding:13px 22px;border-radius:999px;background:#f2f3f5;color:#050609;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:500">Request the packet →</a>
+          <a href="Achievements.dc.html" style="display:inline-flex;align-items:center;padding:13px 22px;border-radius:999px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.07);color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:500">See the record</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="position:relative;z-index:10;padding:0 22px 40px">
+    <div style="display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding-top:26px;border-top:1px solid rgba(255,255,255,0.14)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="assets/makeminds-mark.png" alt="" style="width:30px;height:30px;object-fit:contain;display:block">
+        <div>
+          <p style="margin:0;font-size:15px;font-weight:600">MakEMinds Robotics</p>
+          <p style="margin:5px 0 0;font-family:'Montserrat',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)">FTC 23786 · Edison, NJ · © 2026</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;font-family:'Montserrat',sans-serif;font-size:14px">
+        <a href="mailto:info@makemindsrobotics.org">info@makemindsrobotics.org</a>
+        <a href="https://ftc-events.firstinspires.org/team/23786" target="_blank" rel="noopener noreferrer">ftc-events</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

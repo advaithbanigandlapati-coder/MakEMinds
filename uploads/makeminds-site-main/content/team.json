@@ -1,0 +1,50 @@
+{
+  "_source": "Roster is placeholder pending confirmation. Replace before launch.",
+  "__placeholder": true,
+  "members": [
+    {
+      "name": "Captain Placeholder",
+      "role": "Captain",
+      "year": "Senior",
+      "bio": "Founding member. Leads strategy + alliance selection. Java + CAD.",
+      "headshot": null
+    },
+    {
+      "name": "Build Lead Placeholder",
+      "role": "Build Lead",
+      "year": "Junior",
+      "bio": "Owns the drivetrain. Fusion 360, CNC milling, 3D printing.",
+      "headshot": null
+    },
+    {
+      "name": "Software Lead Placeholder",
+      "role": "Software Lead",
+      "year": "Junior",
+      "bio": "Vision pipeline. OpenCV, AprilTag detection, autonomous routines.",
+      "headshot": null
+    },
+    {
+      "name": "Outreach Lead Placeholder",
+      "role": "Outreach Lead",
+      "year": "Sophomore",
+      "bio": "Coordinates school visits, library demos, summer camp.",
+      "headshot": null
+    },
+    {
+      "name": "Notebook Lead Placeholder",
+      "role": "Engineering Notebook Lead",
+      "year": "Sophomore",
+      "bio": "Owns the engineering portfolio + Inspire submission.",
+      "headshot": null
+    }
+  ],
+  "mentors": [
+    {
+      "name": "Coach Placeholder",
+      "role": "Head Coach",
+      "bio": "Engineer. Owns the domain + sponsor relationships.",
+      "headshot": null,
+      "__placeholder": true
+    }
+  ]
+}
